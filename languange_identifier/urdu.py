@@ -3,7 +3,7 @@ import nltk
 from re import search
 from nltk.tokenize import sent_tokenize, RegexpTokenizer
 
-
+# urdu text
 urdu_text = '''
 تعلیم ایک قوم کی ترقی کا بنیادی ستون ہے۔ یہ نہ صرف افراد کو علم فراہم کرتی ہے بلکہ انہیں معاشرے کا ایک مفید شہری بھی بناتی ہے۔ 
 کیا آپ سمجھتے ہیں کہ تعلیم ضروری ہے؟ یقیناً! تعلیم کے بغیر ترقی ممکن نہیں۔  

@@ -14,30 +14,30 @@ telgu_text="""ఒక గ్రామంలో ఒక పేద కూలీ జ�
 ### నీతి: ౦౩౮౯౯౭౪౨౩౬ +91 ౯౮౮౭౨౪౩౨౧౦ రాజేష్.దాస్123@జీమెయిల్.కామ్ 
 తల్లిదండ్రుల కష్టం మరియు పిల్లల విద్య కష్టకాలాలను జయించగలదు. ధనం కాదు, జ్ఞానం నిజమైన సంపద.
 """
+#telgu text pattern unicode 
 telgu_text_patern=r'[\u0C00-\u0C7F]+'
 telgu_sentence_pattern=r'.+?[।.!?॥]'    # telgu sentence ends with | || . ? !
 telgu_paragraph=telgu_text.split("/n/n")
 
-#for telgu senteces
+#for telgu senteces:- telgu sentences 
 for  para in telgu_paragraph:
     telgu_sentence=findall(telgu_sentence_pattern,para)
     print(telgu_sentence)
 print("sentence ends ")
 
-#for telgu words 
+#for telgu words :- word tokenisation
 for para in telgu_paragraph:
     telgu_words=findall(telgu_text_patern,telgu_text)
     print(telgu_words)
     
 #for mobile number in the given text 
 # Regex pattern to match Telugu mobile numbers
-# mobile_pattern_telugu = r'\+91[\s-]?[౭-౯]\d{4}[\s-]?\d{5}|\(?0\)?[\s-]?[౭-౯]\d{4}[\s-]?\d{5}'
 mobile_pattern_telugu=r'[౦౧౨౩౪౫౬౭౮౯]{10} |\+91[\s-]?[౦౧౨౩౪౫౬౭౮౯]{10}  | \+91[\s-]?[౦౧౨౩౪౫౬౭౮౯]{5}[\s-]?[౦౧౨౩౪౫౬౭౮౯]{5}'
 
 telgu_mobile=findall(mobile_pattern_telugu,telgu_text)
 print("mobile number from telgu text  is : ",telgu_mobile)
 
 #for telgu emails 
-telgu_email_pattern=r'[\u0C00-\u0C7Fa-zA-Z0-9._]+@[\u0C00-\u0C7Fa-zA-Z0-9._]+.[\u0C00-\u0C7Fa-zA-Z0-9._]+| [a-zA-Z0-9._]+@[a-zA-Z0-9._].[a-zA-Z0-9._]{2,} '
-telgu_email=findall(telgu_email_pattern,telgu_text)
+telgu_email_pattern=r'[\u0C00-\u0C7Fa-zA-Z0-9._]+@[\u0C00-\u0C7Fa-zA-Z0-9._]+.[\u0C00-\u0C7Fa-zA-Z0-9._]+| [a-zA-Z0-9._]+@[a-zA-Z0-9._].[a-zA-Z0-9._]{2,} ' #telgu email pattern
+telgu_email=findall(telgu_email_pattern,telgu_text)  #using findall methof from regular expression
 print("email from telgu text is :- ",telgu_email)

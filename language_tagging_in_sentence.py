@@ -5,22 +5,6 @@ import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.tag import pos_tag
 
-# Input text for language tagging
-text = """
-my name is novel and i am reading book. 
-DiwaliThe Festival of Lights
-Diwali, also known as Deepavali, is one of the most significant and widely celebrated festivals in India. 
-It is often referred to as the "Festival of Lights" because of the beautiful display of lamps and candles that 
-illuminate homes and public spaces during this time. The festival signifies the triumph of light over darkness 
-and good over evil, making it a time of joy, hope, and togetherness.
-Historical Significance
-The origins of Diwali can be traced to several stories from Indian mythology. 
-The most popular legend is the return of Lord Rama to Ayodhya after 14 years of exile, 
-during which he defeated the demon king Ravana. The people of Ayodhya celebrated his return by lighting oil lamps 
-(diyas), symbolizing the victory of good over evil. Another important story is that of Lord Krishna's victory 
-over the demon Narakasura, which also signifies the eradication of darkness.
-"""
-
 # Define a class for language identification
 class LanguageIdentifier:
     """

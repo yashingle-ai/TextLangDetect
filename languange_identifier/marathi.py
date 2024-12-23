@@ -31,15 +31,20 @@ marathi_text="""एकदा एका जंगलात एक भलामो
 
 marathi_text_pattern=r"[\u0900-\u097F\w-]+"
 paragraph=marathi_text.split("/n/n")
-marathi_sentence_patern=r'.+?[।॥.]'
+# Regular expression to extract complete Marathi sentences
+# Matches Devanagari script (\u0900-\u097F), spaces, and sentence-ending punctuation.
+marathi_sentence_pattern = r'[\u0900-\u097F\s]+[।.!?]'
+marathi_sentences=[]
 for para in paragraph:
-    sentences=sent_tokenize(para)
-    print(sentences)
-    for sentence in sentences:
-        regexp_tokensior=RegexpTokenizer(marathi_text_pattern)
-        marathi_words=regexp_tokensior.tokenize(sentence)
-        print(marathi_words)
-        
+# Find all Marathi sentences
+    marathi_sentence = re.findall(marathi_sentence_pattern, para)
+    marathi_sentences=marathi_sentences+marathi_sentence
+
+# Clean and print the results
+    marathi_sentences = [sentence.strip() for sentence in marathi_sentences]
+print("Extracted Marathi sentences:")
+for sentence in marathi_sentences:
+    print(sentence)
 #for word tokenize
 words=findall(marathi_text_pattern,marathi_text)
 print(words)

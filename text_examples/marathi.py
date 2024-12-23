@@ -528,28 +528,3 @@ marathi_text="""
 """
 length=len(marathi_text)
 print(length)
-import re ,nltk
-from nltk.tokenize import sent_tokenize
-
-# Open the file for writing
-file_path = r"C:\Users\yashi\OneDrive\Desktop\ML project\sent_tokenisation_with_language_code\hindi.txt"
-with open(file_path, "w", encoding="utf-8") as f:
-    marathi_text_pattern=r"[\u0900-\u097F\w-]+"
-    paragraph=marathi_text.split("/n/n")
-# Regular expression to extract complete Marathi sentences
-# Matches Devanagari script (\u0900-\u097F), spaces, and sentence-ending punctuation.
-    marathi_sentence_pattern = r'[\u0900-\u097F\s]+[।.!?]'
-    marathi_sentences=[]
-    for para in paragraph:
-# Find all Marathi sentences
-       marathi_sentence = re.findall(marathi_sentence_pattern, para)
-       marathi_sentences=marathi_sentences+marathi_sentence
-
-# Clean and print the results
-    marathi_sentences = [sentence.strip() for sentence in marathi_sentences]
-    
-     # Loop for writing sentences into the file with their language code
-    for sentence in marathi_sentences:
-        f.write(f"{sentence}\tmar\n")  # Write each sentence with language code
-
-    f.close()

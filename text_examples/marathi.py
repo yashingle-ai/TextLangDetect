@@ -1,4 +1,4 @@
-marath_text="""
+marathi_text="""
 महाराष्ट्र हे भारताच्या पश्चिम भागातले एक राज्य आहे. क्षेत्रफळाच्या दृष्टीने महाराष्ट्र भारतातील तिसरे व लोकसंख्येच्या बाबतीत दुसरे मोठे राज्य आहे. महाराष्ट्र हे भारताच्या सर्वांत विकसनशिल राज्यांपैकी एक आहे. महाराष्ट्र राज्याची सीमा गुजरात, मध्य प्रदेश, छत्तीसगढ, तेलंगणा, कर्नाटक, गोवा आणि दादरा आणि नगर-हवेली या केंद्रशासित प्रदेशांशी जोडलेली आहे. राज्याच्या पश्चिमेला अरबी समुद्राची ७२० कि.मी.ची किनारपट्टी आहे. जवळपास ११ कोटी लोकसंख्या असलेल्या महाराष्ट्राची राजधानी मुंबई आहे. मुंबईत साधारण १.८ कोटी लोक राहतात. नागपूर शहर महाराष्ट्राची उपराजधानी आहे. मध्ययुगीन महाराष्ट्र सातवाहन राजवंश राष्ट्रकूट राजवंश, पश्चिम चालुक्य, मुघल आणि मराठ्यांच्या साम्राज्याचा समावेश आहे. विस्तार १, १८, ८०९ चौरस मैल (३,०७, ७१३ चौरस किमी) असून, तो पश्चिम आणि कर्नाटक, तेलंगणा, गोवा, गुजरात, छत्तीसगड, मध्य प्रदेश आणि दादरा आणि नगर हवेली भारतीय राज्यांना अरबी समुद्र लागून आहे. महाराष्ट्राला जगद्गुरू संत तुकाराम, संत ज्ञानेश्र्वर, संत चोखामेळा, संत एकनाथ, संत नामदेव, संत गाडगेबाबा संत मुक्ताई यासारख्या अनेक महान संतांचा वारसा लाभला आहे, त्यामुळे या राज्यास "संतांची भूमी" असेदेखील म्हणले जाते.पंढरपूर हे महाराष्ट्राचे आराध्य दैवत आहे. मुंबई भारतातील टॉप शहर असून येथूनच अभिनेते, राजकारणी आणि क्रिकेट खेळाडू तयार होतात. जगात महाराष्ट्राचे नाव गाजविणारे सचिन तेंडुलकर हे क्रिकेट खेळाडू महाराष्ट्रातले आहेत. मुघल साम्राज्याविरुद्ध लढा देऊन हिंदवी स्वराज्याची स्थापना करणारे छत्रपती शिवाजी महाराज याच राज्यातील आहेत.या राज्याला खुप मोठा इतिहास आहे.महाराष्ट्रात शेतकरी वर्ग खुप आहे.
 
 नावाचा उगम
@@ -526,5 +526,30 @@ marath_text="""
 
 
 """
-length=len(marath_text)
+length=len(marathi_text)
 print(length)
+import re ,nltk
+from nltk.tokenize import sent_tokenize
+
+# Open the file for writing
+file_path = r"C:\Users\yashi\OneDrive\Desktop\ML project\sent_tokenisation_with_language_code\hindi.txt"
+with open(file_path, "w", encoding="utf-8") as f:
+    marathi_text_pattern=r"[\u0900-\u097F\w-]+"
+    paragraph=marathi_text.split("/n/n")
+# Regular expression to extract complete Marathi sentences
+# Matches Devanagari script (\u0900-\u097F), spaces, and sentence-ending punctuation.
+    marathi_sentence_pattern = r'[\u0900-\u097F\s]+[।.!?]'
+    marathi_sentences=[]
+    for para in paragraph:
+# Find all Marathi sentences
+       marathi_sentence = re.findall(marathi_sentence_pattern, para)
+       marathi_sentences=marathi_sentences+marathi_sentence
+
+# Clean and print the results
+    marathi_sentences = [sentence.strip() for sentence in marathi_sentences]
+    
+     # Loop for writing sentences into the file with their language code
+    for sentence in marathi_sentences:
+        f.write(f"{sentence}\tmar\n")  # Write each sentence with language code
+
+    f.close()

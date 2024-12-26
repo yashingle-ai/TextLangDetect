@@ -1,3 +1,4 @@
+# claculation of tf-idf without using library 
 import math
 from collections import Counter
 import re
@@ -31,8 +32,8 @@ def calculate_idf(docs):
     
     idf = {}                                                                    # Create an empty dictionary to store IDF values
     for term, doc_freq in term_doc_freq.items():                                # Go through each term and the number of documents it appears in
-    #    scaled_idf = math.log(1 + total_docs / doc_freq)                         # Calculate the scaled IDF for the term
-       scaled_idf = math.log(total_docs / 1 + doc_freq)                         # Calculate the scaled IDF for the term, this is correct
+    
+       scaled_idf = math.log(total_docs / (1 + doc_freq))                         # Calculate the scaled IDF for the term, this is correct
        idf[term] = scaled_idf                                                   # Store the result in the dictionary
 
     return idf

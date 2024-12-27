@@ -128,7 +128,7 @@ for first_sent in range(len(vector_contain_list)):
             #assigning the cosine_similarity value 
             cosine_similarity=dot_product/(magnitude_A*magnitude_B)
           
-        print(f'here the sentence{first_sent} matched with the sentence {next_sent} with cosine similarity of {cosine_similarity}')
+    print(f'here the sentence{first_sent} matched with the sentence {next_sent} with cosine similarity of {cosine_similarity}')
         
     
         

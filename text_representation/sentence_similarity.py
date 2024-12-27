@@ -105,31 +105,36 @@ print(len(vector_contain_list))
 import numpy as np
 
 for first_sent in range(len(vector_contain_list)):
-    
-    cosine_similarity=0
-    
-    #here we won't to compare only next sentece because previous sentences are compared.
-    next_sent=first_sent+1
-    
+    cosine_similarity = 0
+    matched_vector = -1  # Reset matched vector for each sentence
+
     for next_sent in range(len(vector_contain_list)):
-        A=np.array(vector_contain_list[first_sent])
-        B=np.array(vector_contain_list[next_sent])
+        if next_sent == first_sent:  # Skip comparing the sentence with itself
+            continue
         
-        #calculating dot product of sentence
-        dot_product=np.dot(A,B)
-        #calculating magnitude of sentences 
-        magnitude_A=np.linalg.norm(A)
-        magnitude_B=np.linalg.norm(B)
+        # Convert vectors to numpy arrays
+        A = np.array(vector_contain_list[first_sent])
+        B = np.array(vector_contain_list[next_sent])
         
-        #here we finding most similar sentence with that next sentence 
-        if((dot_product/(magnitude_A*magnitude_B))>cosine_similarity):
-            #storing sentence that highly matched with the first_sent(we are iterate so first_sent is always change)
-            matched_vector=next_sent
-            #assigning the cosine_similarity value 
-            cosine_similarity=dot_product/(magnitude_A*magnitude_B)
-          
-    print(f'here the sentence{first_sent} matched with the sentence {next_sent} with cosine similarity of {cosine_similarity}')
+        # Calculate dot product and magnitudes
+        dot_product = np.dot(A, B)
+        magnitude_A = np.linalg.norm(A)
+        magnitude_B = np.linalg.norm(B)
         
+        # Avoid division by zero
+        if magnitude_A == 0 or magnitude_B == 0:
+            similarity = 0
+        else:
+            similarity = dot_product / (magnitude_A * magnitude_B)
+        
+        # Update the most similar sentence
+        if similarity > cosine_similarity:
+            matched_vector = next_sent
+            cosine_similarity = similarity
+    
+    # Output result for the current sentence
+    print(f"Sentence {first_sent} is most similar to sentence {matched_vector} with cosine similarity of {cosine_similarity:.4f}")
+
     
         
         

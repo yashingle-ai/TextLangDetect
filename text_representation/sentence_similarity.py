@@ -107,7 +107,6 @@ import numpy as np
 for first_sent in range(len(vector_contain_list)):
     
     cosine_similarity=0
-    matched_vector=-1
     
     #here we won't to compare only next sentece because previous sentences are compared.
     next_sent=first_sent+1
@@ -123,11 +122,12 @@ for first_sent in range(len(vector_contain_list)):
         magnitude_B=np.linalg.norm(B)
         
         #here we finding most similar sentence with that next sentence 
-        cosine_similarity=(dot_product/(magnitude_A*magnitude_B))
-        
-        #storing sentence that highly matched with the first_sent(we are iterate so first_sent is always change)
-        matched_vector=next_sent 
-         
+        if((dot_product/(magnitude_A*magnitude_B))>cosine_similarity):
+            #storing sentence that highly matched with the first_sent(we are iterate so first_sent is always change)
+            matched_vector=next_sent
+            #assigning the cosine_similarity value 
+            cosine_similarity=dot_product/(magnitude_A*magnitude_B)
+          
         print(f'here the sentence{first_sent} matched with the sentence {next_sent} with cosine similarity of {cosine_similarity}')
         
     

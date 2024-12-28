@@ -92,4 +92,4 @@ for sentence_tfidf in tfidf:
     
     # Append the complete vector for the sentence to the list
     vector_contain_list.append(list(vector_of_list.values()))
-  print(vector_contain_list)
+    print(vector_contain_list)

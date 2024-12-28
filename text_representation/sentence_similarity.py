@@ -7,9 +7,13 @@ from nltk.tokenize import word_tokenize
 def pre_process(text):
     text = re.sub(r'[\n\t]', ' ', text)             # Remove newlines and tabs
     text = re.sub(r'[^\w\s]', '', text.lower())     # Remove punctuation and convert to lowercase
-    return  word_tokenize(text) or []               # Tokenize text into words
+    # --comment
+    # use sent_tokenize and then word_tokenize
+    return word_tokenize(text) or []               # Tokenize text into words
 
 # File handling or input data(contain sentences)
+# --- comments
+# never hardcode any file path, better use command line arguments using argparse/sys package
 with open("C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\sent_tokenisation_with_language_code\\english.txt", "r", encoding="utf-8") as f:
     # Creating a set "vocabulary" that contains all the unique words
     vocabulary = set()
@@ -35,6 +39,7 @@ with open("C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\sent_tokenisation_wi
         tf = {}
         for term, count in term_freq.items():
             # Scaled frequency (log(1 + count) or scaled version of the frequency)
+            # --comment - use 1 + count for smoothing
             scaled_frequency = 0.5 + 0.5 * (count / max_frequency)
             tf[term] = scaled_frequency
         return tf
@@ -48,9 +53,11 @@ with open("C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\sent_tokenisation_wi
         for doc in docs:
             unique_terms = set(doc)  # Get unique terms from the document
             for term in unique_terms:
-                if term not in term_doc_freq:
-                    term_doc_freq[term] = 0
-                term_doc_freq[term] += 1
+                # if term not in term_doc_freq:
+                #     term_doc_freq[term] = 0
+                # term_doc_freq[term] += 1
+                # better way to write the above 3 lines is:
+                term_doc_freq[term] = term_doc_freq.get(term, 0) + 1
 
         # Calculate IDF for each term
         idf = {}
@@ -101,7 +108,9 @@ print(len(vector_contain_list))
     
 
 
-#sentence similarity 
+#sentence similarity
+# -- comments
+# you import all packages at the top, it is not a python notebook, rather a python code
 import numpy as np
 
 for first_sent in range(len(vector_contain_list)):

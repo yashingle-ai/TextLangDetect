@@ -2,6 +2,7 @@ import math
 from collections import Counter
 import re
 from nltk.tokenize import word_tokenize
+import numpy as np
 
 # Preprocess the data (Remove punctuation and convert to lowercase)
 def pre_process(text):
@@ -109,9 +110,6 @@ print(len(vector_contain_list))
 
 
 #sentence similarity
-# -- comments
-# you import all packages at the top, it is not a python notebook, rather a python code
-import numpy as np
 
 for first_sent in range(len(vector_contain_list)):
     cosine_similarity = 0

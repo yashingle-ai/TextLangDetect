@@ -1,3 +1,4 @@
+#finding the most similar sentence with compare other sentences in the give file 
 import math
 from collections import Counter
 import re
@@ -15,6 +16,8 @@ def pre_process(text):
 # File handling or input data(contain sentences)
 # --- comments
 # never hardcode any file path, better use command line arguments using argparse/sys package
+#here we use english.txt file that contain english sentences with the help of file handling 
+
 with open("C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\sent_tokenisation_with_language_code\\english.txt", "r", encoding="utf-8") as f:
     # Creating a set "vocabulary" that contains all the unique words
     vocabulary = set()

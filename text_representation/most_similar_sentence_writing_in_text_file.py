@@ -139,17 +139,15 @@ for first_sent in range(len(vector_contain_list)):
     with open("C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\model_making\\text_representation\\sentence_similarity.txt",'a',encoding='utf-8') as file :
         
         # Write results for the current sentence in the file 
-        file.write("Sentence: ")
-        for tfidf_digit, word in zip(vector_contain_list[first_sent], vocabulary_list):
-            if tfidf_digit != 0:
-                file.write(f'{word} ')
+        file.write(f"Sentence: {' '.join(cleaned_sentences[first_sent])}\n")
+
         
+
         if matched_vector == -1:
-            file.write("has no similar sentence in the given file.\n\n")
+                file.write(f"No similar sentence found for rank {matched_vector+ 1}.\n")
         else:
-            file.write("\nMost similar to: ")
-            for tfidf_digit, word in zip(vector_contain_list[matched_vector], vocabulary_list):
-                if tfidf_digit != 0:
-                    file.write(f'{word} ')
-            file.write(f"\nCosine Similarity: {cosine_similarity:.4f}\n\n")
-            
+                # Write the k-ranked similar sentence
+            file.write(f"\n most Similar Sentence : {' '.join(cleaned_sentences[matched_vector])}\n")
+            file.write(f"Cosine Similarity: {cosine_similarity:.4f}\n")
+
+        file.write("\n")

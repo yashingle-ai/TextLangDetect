@@ -152,30 +152,18 @@ for first_sent in range(len(vector_contain_list)):
         cosine_similarity_of_k_most_similar_sent.append(cosine_similarity)
 
     # Writing  results for the current sentence in the file
-    with open("C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\model_making\\text_representation\\k_sentence_similar.txt","a",encoding="utf-8") as file:
+    with open("C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\model_making\\text_representation\\new_k_similar_sentence.txt","a",encoding="utf-8") as file:
         
-        file.write(f"Sentence: ")
-        for tfidf_digit, word in zip(vector_contain_list[first_sent], vocabulary_list): #using zip function that usually concate two lists(list1_element,list2_element)
-            
-            #if tfidf_value is  non zero then word is present in the sentence 
-            
-            if tfidf_digit != 0:
-                file.write(f"{word} ")
-                
-        file.write("\n")
+        
+        file.write(f"Sentence: {' '.join(cleaned_sentences[first_sent])}\n")
 
-        for i, index_of_sentence in enumerate(index_of_k_most_similar_sent): #here we use enumerate method of list beacuse we also want index so help to represent k index for sentence 
-            
+        for i, index_of_sentence in enumerate(index_of_k_most_similar_sent):  # Iterate through top-k similar sentences
+
             if index_of_sentence == -1:
                 file.write(f"No similar sentence found for rank {i + 1}.\n")
-            
             else:
-                file.write(f"\n{k}-Ranked Similar Sentence {i + 1}: ")
-                
-                for tfidf_digit, word in zip(vector_contain_list[index_of_sentence], vocabulary_list):
-                    if tfidf_digit != 0:
-                        file.write(f"{word} ")
-                file.write(
-                    f"\nCosine Similarity: {cosine_similarity_of_k_most_similar_sent[i]:.4f}\n"
-                )
+                # Write the k-ranked similar sentence
+                file.write(f"\n{k}-Ranked Similar Sentence {i + 1}: {' '.join(cleaned_sentences[index_of_sentence])}\n")
+                file.write(f"Cosine Similarity: {cosine_similarity_of_k_most_similar_sent[i]:.4f}\n")
+
         file.write("\n")

@@ -53,7 +53,7 @@ def main():
     # Argument parsing
     parser = argparse.ArgumentParser(description="Find k most similar sentences using Euclidean distance.")
     parser.add_argument("sentence_with_thier_language_code/english.txt", type=str, help="Path to the input text file")
-    parser.add_argument("output_file", type=str, help="Path to the output text file")
+    parser.add_argument("text_representation/k_most_similar_sentence_eculidean_distance.py", type=str, help="Path to the output text file")
     parser.add_argument("k", type=int, help="Number of similar sentences to find")
     args = parser.parse_args()
 

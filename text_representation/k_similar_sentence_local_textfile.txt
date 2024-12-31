@@ -1,0 +1,30 @@
+Sentence 6: involve state district officials
+  1-Ranked Match: the panel has suggested involving state and districtlevel authorities in the way elections are conducted eng
+    Cosine Similarity: 0.0583
+  2-Ranked Match: specifically it has recommended setting up coordination committees at these levels comprising officials of the nta the national informatics centre nic police and the intelligence bureau eng
+    Cosine Similarity: 0.0451
+
+Sentence 7: the panel has suggested involving state and districtlevel authorities in the way elections are conducted eng
+  1-Ranked Match: involve state district officials
+    Cosine Similarity: 0.0583
+  2-Ranked Match: specifically it has recommended setting up coordination committees at these levels comprising officials of the nta the national informatics centre nic police and the intelligence bureau eng
+    Cosine Similarity: 0.0391
+
+Sentence 8: specifically it has recommended setting up coordination committees at these levels comprising officials of the nta the national informatics centre nic police and the intelligence bureau eng
+  1-Ranked Match: these committees would prepare strategies to ensure transparent and fair exams identify testing centres and ensure safe transportation of question papers with security from the police or paramilitary forces eng
+    Cosine Similarity: 0.0717
+  2-Ranked Match: involve state district officials
+    Cosine Similarity: 0.0451
+
+Sentence 9: these committees would prepare strategies to ensure transparent and fair exams identify testing centres and ensure safe transportation of question papers with security from the police or paramilitary forces eng
+  1-Ranked Match: specifically it has recommended setting up coordination committees at these levels comprising officials of the nta the national informatics centre nic police and the intelligence bureau eng
+    Cosine Similarity: 0.0717
+  2-Ranked Match: the panel has suggested involving state and districtlevel authorities in the way elections are conducted eng
+    Cosine Similarity: 0.0137
+
+Sentence 10: advertisement
+  1-Ranked Match: involve state district officials
+    Cosine Similarity: 0.0000
+  2-Ranked Match: the panel has suggested involving state and districtlevel authorities in the way elections are conducted eng
+    Cosine Similarity: 0.0000
+

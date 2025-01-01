@@ -1,9 +1,9 @@
-#finding the most similar sentence with compare other sentences in the give file 
 import math
 from collections import Counter
 import re
 from nltk.tokenize import word_tokenize
 import numpy as np
+import argparse  # Import argparse
 
 # Preprocess the data (Remove punctuation and convert to lowercase)
 def pre_process(text):
@@ -13,12 +13,21 @@ def pre_process(text):
     # use sent_tokenize and then word_tokenize
     return word_tokenize(text) or []               # Tokenize text into words
 
+# Command line argument parsing using argparse
+def parse_arguments():
+    parser = argparse.ArgumentParser(description='Process a text file and find most similar sentences.')
+    parser.add_argument('file_path', type=str, help='Path to the input text file')
+    return parser.parse_args()
+
 # File handling or input data(contain sentences)
 # --- comments
 # never hardcode any file path, better use command line arguments using argparse/sys package
 #here we use english.txt file that contain english sentences with the help of file handling 
 
-with open("C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\sent_tokenisation_with_language_code\\english.txt", "r", encoding="utf-8") as f:
+# Parse command-line arguments
+args = parse_arguments()
+
+with open(args.file_path, "r", encoding="utf-8") as f:
     # Creating a set "vocabulary" that contains all the unique words
     vocabulary = set()
     lines = f.readlines()  # Read all lines into memory at once
@@ -57,10 +66,6 @@ with open("C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\sent_tokenisation_wi
         for doc in docs:
             unique_terms = set(doc)  # Get unique terms from the document
             for term in unique_terms:
-                # if term not in term_doc_freq:
-                #     term_doc_freq[term] = 0
-                # term_doc_freq[term] += 1
-                # better way to write the above 3 lines is:
                 term_doc_freq[term] = term_doc_freq.get(term, 0) + 1
 
         # Calculate IDF for each term
@@ -77,21 +82,16 @@ with open("C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\sent_tokenisation_wi
         tfidf = []
         for doc_tf in tf:
             doc_tfidf = {term: doc_tf.get(term, 0) * idf.get(term, 0) for term in doc_tf}  # Calculate TF-IDF
-            
-            
             tfidf.append(doc_tfidf)
         return tfidf
 
 # Compute TF-IDF
 tfidf = calculate_tfidf(cleaned_sentences)
 
-
 # Print the cleaned data
 print("Cleaned Data (List of tokenized sentences):")
 # for sentence in cleaned_sentences:
 #     print(sentence)
-
-
 
 vector_contain_list = []
 
@@ -108,8 +108,6 @@ for sentence_tfidf in tfidf:
     vector_contain_list.append(list(vector_of_list.values()))
 # print(vector_contain_list)
 print(len(vector_contain_list))
-    
-    
 
 
 #sentence similarity
@@ -144,10 +142,3 @@ for first_sent in range(len(vector_contain_list)):
     
     # Output result for the current sentence
     print(f"Sentence {first_sent} is most similar to sentence {matched_vector} with cosine similarity of {cosine_similarity:.4f}")
-
-    
-        
-        
-        
-
-    

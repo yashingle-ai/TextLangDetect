@@ -3,167 +3,135 @@ from collections import Counter
 import re
 from nltk.tokenize import word_tokenize
 import numpy as np
+import argparse
+import os
 
-# Preprocess the data (Remove punctuation and convert to lowercase)
 def pre_process(text):
+    # """
+    # Preprocess the data by removing punctuation and converting to lowercase.
+    # """
     text = re.sub(r'[\n\t]', ' ', text)             # Remove newlines and tabs
     text = re.sub(r'[^\w\s]', '', text.lower())     # Remove punctuation and convert to lowercase
-    return  word_tokenize(text) or []               # Tokenize text into words
+    return word_tokenize(text) or []                 # Tokenize text into words
 
-# File handling or input data(contain sentences)
-with open("C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\sent_tokenisation_with_language_code\\english.txt", "r", encoding="utf-8") as f:
-    # Creating a set "vocabulary" that contains all the unique words
-    vocabulary = set()
-    lines = f.readlines()  # Read all lines into memory at once
+def calculate_tf(doc):
+    # """
+    # Calculate Term Frequency (TF) for a document.
+    # """
+    term_freq = Counter(doc)
+    max_frequency = max(term_freq.values())
+    tf = {}
+    for term, count in term_freq.items():
+        scaled_frequency = 0.5 + 0.5 * (count / max_frequency)
+        tf[term] = scaled_frequency
+    return tf
 
-    # Pre-process lines and tokenize into words
+def calculate_idf(docs):
+    # """
+    # Calculate Inverse Document Frequency (IDF) for a collection of documents.
+    # """
+    total_docs = len(docs)
+    term_doc_freq = {}
+
+    for doc in docs:
+        unique_terms = set(doc)
+        for term in unique_terms:
+            term_doc_freq[term] = term_doc_freq.get(term, 0) + 1
+
+    idf = {}
+    for term, doc_freq in term_doc_freq.items():
+        scaled_idf = math.log(total_docs / (1 + doc_freq))
+        idf[term] = scaled_idf
+    return idf
+
+def calculate_tfidf(docs):
+    # """
+    # Calculate TF-IDF for a collection of documents.
+    # """
+    tf = [calculate_tf(doc) for doc in docs]
+    idf = calculate_idf(docs)
+    tfidf = []
+    for doc_tf in tf:
+        doc_tfidf = {term: doc_tf.get(term, 0) * idf.get(term, 0) for term in doc_tf}
+        tfidf.append(doc_tfidf)
+    return tfidf
+
+def main():
+    #here the input file is english.txt from 
+    parser = argparse.ArgumentParser(description="TF-IDF and sentence similarity computation.")
+    parser.add_argument("input_file", help="Path to the input text file containing sentences.")
+    parser.add_argument("output_file", help="Path to the output file to save results.")
+    parser.add_argument("-k", type=int, default=3, help="Number of similar sentences to find (default: 3).")
+    args = parser.parse_args()
+
+    # Validate input file
+    if not os.path.isfile(args.input_file):
+        print(f"Error: File '{args.input_file}' does not exist.")
+        return
+
+    # Read input file
+    with open(args.input_file, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
+    # Preprocess sentences
     cleaned_sentences = [pre_process(line.strip()) for line in lines]
-    
-    #removing empty sentences
     cleaned_sentences = [sentence for sentence in cleaned_sentences if sentence]
 
-    # Collect words for the vocabulary
+    # Create vocabulary
+    vocabulary = set()
     for sentence in cleaned_sentences:
-        vocabulary.update(sentence)  # Add words to the vocabulary set
+        vocabulary.update(sentence)
+    vocabulary_list = list(vocabulary)
 
-    vocabulary_list = list(vocabulary)  # Convert vocabulary set into a list for indexing
-    
-     
-    # Calculating TF (Term Frequency)
-    def calculate_tf(doc):
-        term_freq = Counter(doc)  # Count frequency of each term in the document
-        max_frequency = max(term_freq.values())  # Maximum term frequency
-        tf = {}
-        for term, count in term_freq.items():
-            # Scaled frequency (log(1 + count) or scaled version of the frequency)
-            scaled_frequency = 0.5 + 0.5 * (count / max_frequency)
-            tf[term] = scaled_frequency
-        return tf
+    # Compute TF-IDF
+    tfidf = calculate_tfidf(cleaned_sentences)
 
-    # Calculating IDF (Inverse Document Frequency)
-    def calculate_idf(docs):
-        total_docs = len(docs)  # Number of documents (sentences)
-        term_doc_freq = {}
+    # Generate vectors for each sentence
+    vector_contain_list = []
+    for sentence_tfidf in tfidf:
+        vector_of_list = {term: 0 for term in vocabulary_list}
+        for term, score in sentence_tfidf.items():
+            vector_of_list[term] = score
+        vector_contain_list.append(list(vector_of_list.values()))
 
-        # Iterate through each document (sentence)
-        for doc in docs:
-            unique_terms = set(doc)  # Get unique terms from the document
-            for term in unique_terms:
-                if term not in term_doc_freq:
-                    term_doc_freq[term] = 0
-                term_doc_freq[term] += 1
+    # Find k similar sentences
+    with open(args.output_file, "w", encoding="utf-8") as file:
+        for first_sent in range(len(vector_contain_list)):
+            index_of_k_most_similar_sent = []
+            cosine_similarity_of_k_most_similar_sent = []
 
-        # Calculate IDF for each term
-        idf = {}
-        for term, doc_freq in term_doc_freq.items():
-            scaled_idf = math.log(total_docs / (1 + doc_freq))  # Add smoothing (1+doc_freq)
-            idf[term] = scaled_idf
-        return idf
+            for _ in range(args.k):
+                cosine_similarity = 0
+                matched_vector = -1
 
-    # Calculating TF-IDF (Term Frequency - Inverse Document Frequency)
-    def calculate_tfidf(docs):
-        tf = [calculate_tf(doc) for doc in docs]      # Calculate TF for each document
-        idf = calculate_idf(docs)                     # Calculate IDF across all documents
-        tfidf = []
-        for doc_tf in tf:
-            doc_tfidf = {term: doc_tf.get(term, 0) * idf.get(term, 0) for term in doc_tf}  # Calculate TF-IDF
-            
-            
-            tfidf.append(doc_tfidf)
-        return tfidf
+                for next_sent in range(len(vector_contain_list)):
+                    if next_sent in index_of_k_most_similar_sent or first_sent == next_sent:
+                        continue
 
-# Compute TF-IDF
-tfidf = calculate_tfidf(cleaned_sentences)
+                    A = np.array(vector_contain_list[first_sent])
+                    B = np.array(vector_contain_list[next_sent])
 
+                    dot_product = np.dot(A, B)
+                    magnitude_A = np.linalg.norm(A)
+                    magnitude_B = np.linalg.norm(B)
 
-# Print the cleaned data
-print("Cleaned Data (List of tokenized sentences):")
-# for sentence in cleaned_sentences:
-#     print(sentence)
+                    similarity = dot_product / (magnitude_A * magnitude_B) if magnitude_A and magnitude_B else 0
 
+                    if similarity > cosine_similarity:
+                        matched_vector = next_sent
+                        cosine_similarity = similarity
 
+                index_of_k_most_similar_sent.append(matched_vector)
+                cosine_similarity_of_k_most_similar_sent.append(cosine_similarity)
 
-vector_contain_list = []
+            file.write(f"Sentence: {' '.join(cleaned_sentences[first_sent])}\n")
+            for i, index_of_sentence in enumerate(index_of_k_most_similar_sent):
+                if index_of_sentence == -1:
+                    file.write(f"No similar sentence found for rank {i + 1}.\n")
+                else:
+                    file.write(f"{i + 1}-Ranked Similar Sentence: {' '.join(cleaned_sentences[index_of_sentence])}\n")
+                    file.write(f"Cosine Similarity: {cosine_similarity_of_k_most_similar_sent[i]:.4f}\n")
+            file.write("\n")
 
-# Iterate through each sentence's TF-IDF
-for sentence_tfidf in tfidf:
-    # Initialize vector with 0 for all vocabulary terms
-    vector_of_list = {term: 0 for term in vocabulary_list}
-    
-    # Update vector with TF-IDF scores for terms in the sentence
-    for term, score in sentence_tfidf.items():
-        vector_of_list[term] = score
-    
-    # Append the complete vector for the sentence to the list
-    vector_contain_list.append(list(vector_of_list.values()))
-# print(vector_contain_list)
-print(len(vector_contain_list))
-    
-    
-#code for finding k similar sentence from the given input file 
-#here my input file is "englis.txt"
-
-#itarate all the sentence that represent in vector form of tfidf representation
-
-k = int(input("Enter the value of k: "))  # Convert input to integer
-
-for first_sent in range(len(vector_contain_list)):
-    
-    
-    #storing index of k most similar sentence into the list 
-    index_of_k_most_similar_sent = []
-    
-    #stroing cosine similarity value of k most similar sentence 
-    cosine_similarity_of_k_most_similar_sent = []
-    
-    
-    for loop in range(k):  # Iterate `k` times to find top-k similar sentences
-        
-        cosine_similarity = 0
-        matched_vector = -1  # Reset matched vector for each iteration
-        
-
-        for next_sent in range(len(vector_contain_list)):
-            if next_sent in index_of_k_most_similar_sent or first_sent == next_sent:
-                continue  # Skip already matched sentences and itself
-
-            # Convert vectors to numpy arrays
-            A = np.array(vector_contain_list[first_sent])
-            B = np.array(vector_contain_list[next_sent])
-
-            # Calculate dot product and magnitudes
-            dot_product = np.dot(A, B)
-            magnitude_A = np.linalg.norm(A)
-            magnitude_B = np.linalg.norm(B)
-
-            # Avoid division by zero
-            if magnitude_A == 0 or magnitude_B == 0:
-                similarity = 0
-            else:
-                similarity = dot_product / (magnitude_A * magnitude_B)
-
-            # Update the most similar sentence
-            if similarity > cosine_similarity:
-                matched_vector = next_sent
-                cosine_similarity = similarity
-
-        # Append results for this iteration
-        index_of_k_most_similar_sent.append(matched_vector)
-        cosine_similarity_of_k_most_similar_sent.append(cosine_similarity)
-
-    # Writing  results for the current sentence in the file
-    with open("C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\model_making\\text_representation\\new_k_similar_sentence.txt","a",encoding="utf-8") as file:
-        
-        
-        file.write(f"Sentence: {' '.join(cleaned_sentences[first_sent])}\n")
-
-        for i, index_of_sentence in enumerate(index_of_k_most_similar_sent):  # Iterate through top-k similar sentences
-
-            if index_of_sentence == -1:
-                file.write(f"No similar sentence found for rank {i + 1}.\n")
-            else:
-                # Write the k-ranked similar sentence
-                file.write(f"\n{k}-Ranked Similar Sentence {i + 1}: {' '.join(cleaned_sentences[index_of_sentence])}\n")
-                file.write(f"Cosine Similarity: {cosine_similarity_of_k_most_similar_sent[i]:.4f}\n")
-
-        file.write("\n")
+if __name__ == "__main__":
+    main()

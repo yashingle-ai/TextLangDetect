@@ -1,9 +1,12 @@
+#bag of words text representation  without using library 
+
 import math
 from collections import Counter
 import re
 from nltk.tokenize import word_tokenize
 import argparse
 import os
+
 
 def pre_process(text):
     text = re.sub(r'[\n\t]', ' ', text)             # Remove newlines and tabs

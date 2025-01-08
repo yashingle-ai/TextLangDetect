@@ -1,9 +1,10 @@
 # take input file that contains sentence with thier uncode text file 
 #output:- give a two outputfile that one consist a sentence and one contain unicode (in same index)
 
+
 import argparse
 
-def process_files(input_path, sentences_output_path, unicode_output_path):
+def process_files(input_path, sentences_output_path, unicode_output_path, default_unicode):
     # Open input file for reading
     with open(input_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
@@ -20,7 +21,8 @@ def process_files(input_path, sentences_output_path, unicode_output_path):
                 unicode_lang = sent_and_unicode[1]
             else:
                 sentence = sent_and_unicode[0]
-                unicode_lang = "unknown"
+                # If there's no language code, use the default provided by the user
+                unicode_lang = default_unicode
 
             # Write the sentence to the sentences file
             sentences_file.write(f"{sentence}\n")
@@ -32,16 +34,19 @@ def main():
     # Initialize the argument parser
     parser = argparse.ArgumentParser(description="Process text file to separate sentences and unicode language codes.")
     
-    # Add arguments for input and output file paths
-    parser.add_argument('-i', '--input', type=str, required=True, help="Path to the input file.")
-    parser.add_argument('-s', '--sentences_output', type=str, required=True, help="Path to the output file for sentences.")
-    parser.add_argument('-u', '--unicode_output', type=str, required=True, help="Path to the output file for unicode language codes.")
+    # Add arguments for input and output file paths, all of them are mandatory
+    parser.add_argument('-i', '--input', type=str, required=True, help="Path to the input file (required).")
+    parser.add_argument('-s', '--sentences_output', type=str, required=True, help="Path to the output file for sentences (required).")
+    parser.add_argument('-u', '--unicode_output', type=str, required=True, help="Path to the output file for unicode language codes (required).")
+    
+    # Add an argument for the default language code (which will be used if not present in the input file)
+    parser.add_argument('--default_unicode', type=str, required=True, help="Default language code to use for sentences without a language code.")
     
     # Parse the arguments
     args = parser.parse_args()
 
-    # Process the files with the provided paths
-    process_files(args.input, args.sentences_output, args.unicode_output)
+    # Process the files with the provided paths and default language code
+    process_files(args.input, args.sentences_output, args.unicode_output, args.default_unicode)
 
 if __name__ == "__main__":
     main()

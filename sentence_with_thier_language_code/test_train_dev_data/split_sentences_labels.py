@@ -61,13 +61,8 @@ def split_files(sentence_file,label_file,output_file_test_sentence,output_file_t
     write_into_file(output_file_dev_unicodes,dev_labels)
     
     print("Files successfully created:")
-    print(f"Train sentences: {output_file_train_sentence}")
-    print(f"Dev sentences: {output_file_dev_sentence}")
-    print(f"Test sentences: {output_file_test_sentence}")
-    print(f"Train labels: {output_file_train_unicodes}")
-    print(f"Dev labels: {output_file_dev_unicodes}")
-    print(f"Test labels: {output_file_test_unicodes}")
-    
+
+
     
 #main function 
 

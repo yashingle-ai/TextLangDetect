@@ -1,5 +1,3 @@
-# here we create a model from scratch for identifiying the sentence language with the help of naive bayes algoriths 
-
 import numpy as np
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -21,7 +19,7 @@ class NaiveBayesTFIDF:
 
     def fit(self, X, y):
         """ Train the Naive Bayes model with TF-IDF vectors """
-        n_samples = len(X)
+        n_samples = len(X)  #number of samples (sentences)
         self.classes = list(set(y))  # Get unique class labels
 
         # TF-IDF vectorization
@@ -29,26 +27,30 @@ class NaiveBayesTFIDF:
         X_tfidf = self.vectorizer.fit_transform(X).toarray()  # Convert to dense array
 
         # Initialize dictionaries for class priors and word probabilities
-        class_counts = defaultdict(int)
-        word_counts = defaultdict(lambda: np.zeros(X_tfidf.shape[1]))
+        class_counts = defaultdict(int)       #counts the number of sentences of perticular language intially with default values
+        word_counts = defaultdict(lambda: np.zeros(X_tfidf.shape[1]))  
+        #word_count store language with thier vocabulary like word_count={hindi=[hindi_vocabulary vector ],english=[eng_vocabulaary vector]and same for other language} 
+        
 
         # Calculate class priors and word frequencies
-        for i in range(n_samples):
-            class_counts[y[i]] += 1
-            word_counts[y[i]] += X_tfidf[i]
+        for i in range(n_samples):    #iterate through each sentnces 
+            class_counts[y[i]] += 1    #y[i] returns the language and after that class_count of element(language) of that language increase with one 
+            word_counts[y[i]] += X_tfidf[i]     #y[i] return the language an after that word_count of elment(language) of that add array here 
+            
 
         # Calculate class priors (log of the probability for numerical stability)
-        for cls in self.classes:
-            self.class_priors[cls] = np.log(class_counts[cls] / float(n_samples))
+        for cls in self.classes:    #iterate through each unique language 
+            self.class_priors[cls] = np.log(class_counts[cls] / float(n_samples))         #calculating language probability 
 
         # Calculate word probabilities for each class
-        self.class_word_probs = {}
-        for cls in self.classes:
-            total_tfidf_in_class = word_counts[cls].sum()  # Total TF-IDF weight in this class
-          
-            self.class_word_probs[cls] = np.log((word_counts[cls] + 1) / (total_tfidf_in_class + len(word_counts[cls])))   # add one for smothing(unseen words) sir's pdf 
+        self.class_word_probs = {}      
+        
+        for cls in self.classes:        
+            total_tfidf_in_class = word_counts[cls].sum()  # Total TF-IDF weight in this class 
+            self.class_word_probs[cls] = np.log((word_counts[cls] + 1) / (total_tfidf_in_class + len(word_counts[cls])))     #here  i use lapalace smothing formula 
 
-  # defineing the function for prediction for the data 
+    
+    #defining function predict
     def predict(self, X):
         """ Predict the class for each sentence """
         X_tfidf = self.vectorizer.transform(X).toarray()  # Transform input to TF-IDF vectors
@@ -68,7 +70,7 @@ class NaiveBayesTFIDF:
         # Return the class with the highest posterior probability
         return max(posteriors, key=posteriors.get)
 
-#defining the fuction for loading the data 
+
 def load_data(sentence_file, label_file):
     """ Load sentences and labels from files """
     with open(sentence_file, 'r', encoding='utf-8') as f:

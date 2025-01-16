@@ -1,0 +1,169 @@
+PS C:\Users\yashi\OneDrive\Desktop\ML project> & "C:/Users/yashi/OneDrive/Desktop/ML project/venv/Scripts/python.exe" "c:/Users/yashi/OneDrive/Desktop/ML project/text_suffling/naive_bayes_tabular_feature.py"
+Development Set Accuracy: 0.9077669902912622
+Test Set Accuracy: 0.9060240963855422
+Predictions for new sentences: ['hin' 'eng']
+dev_recall Precision: [1.         0.94623656 0.98850575 1.         1.         1.
+ 1.         1.         1.         0.65930599 1.        ]
+ dev_recall Per-class Recall: [0.7704918  0.98876404 0.95555556 0.95862069 0.96774194 0.74489796
+ 0.93055556 0.96078431 0.8317757  1.         0.875     ]
+dev_fscore is  [0.87037037 0.96703297 0.97175141 0.97887324 0.98360656 0.85380117
+ 0.96402878 0.98       0.90816327 0.79467681 0.93333333]
+test_recall Precision: [1.         0.94623656 0.98850575 1.         1.         1.
+ 1.         1.         1.         0.65930599 1.        ]
+ test_recall Per-class Recall: [0.7704918  0.98876404 0.95555556 0.95862069 0.96774194 0.74489796
+ 0.93055556 0.96078431 0.8317757  1.         0.875     ]
+test_fscore is  [0.87037037 0.96703297 0.97175141 0.97887324 0.98360656 0.85380117
+ 0.96402878 0.98       0.90816327 0.79467681 0.93333333]
+for macro averaging 
+dev_recall Precision: 0.9630952999960976
+ dev_recall Per-class Recall: 0.9076534143924007
+ 1.         1.         1.         0.65930599 1.        ]
+ test_recall Per-class Recall: [0.7704918  0.98876404 0.95555556 0.95862069 0.96774194 0.74489796
+ 0.93055556 0.96078431 0.8317757  1.         0.875     ]
+test_fscore is  [0.87037037 0.96703297 0.97175141 0.97887324 0.98360656 0.85380117
+ 0.96402878 0.98       0.90816327 0.79467681 0.93333333]
+for macro averaging
+dev_recall Precision: 0.9630952999960976
+ dev_recall Per-class Recall: 0.9076534143924007
+ test_recall Per-class Recall: [0.7704918  0.98876404 0.95555556 0.95862069 0.96774194 0.74489796
+ 0.93055556 0.96078431 0.8317757  1.         0.875     ]
+test_fscore is  [0.87037037 0.96703297 0.97175141 0.97887324 0.98360656 0.85380117
+ 0.96402878 0.98       0.90816327 0.79467681 0.93333333]
+for macro averaging
+dev_recall Precision: 0.9630952999960976
+ dev_recall Per-class Recall: 0.9076534143924007
+ 0.93055556 0.96078431 0.8317757  1.         0.875     ]
+test_fscore is  [0.87037037 0.96703297 0.97175141 0.97887324 0.98360656 0.85380117
+ 0.96402878 0.98       0.90816327 0.79467681 0.93333333]
+for macro averaging
+dev_recall Precision: 0.9630952999960976
+ dev_recall Per-class Recall: 0.9076534143924007
+test_fscore is  [0.87037037 0.96703297 0.97175141 0.97887324 0.98360656 0.85380117
+ 0.96402878 0.98       0.90816327 0.79467681 0.93333333]
+for macro averaging
+dev_recall Precision: 0.9630952999960976
+ dev_recall Per-class Recall: 0.9076534143924007
+for macro averaging
+dev_recall Precision: 0.9630952999960976
+ dev_recall Per-class Recall: 0.9076534143924007
+dev_recall Precision: 0.9630952999960976
+ dev_recall Per-class Recall: 0.9076534143924007
+ dev_recall Per-class Recall: 0.9076534143924007
+dev_fscore is  0.9277852634489592
+test_recall Precision: 0.9630952999960976
+ test_recall Per-class Recall: 0.9076534143924007
+test_fscore is  0.9277852634489592
+for micro averaging
+dev_recall Precision:   0.9077669902912622
+ dev_recall Per-class Recall:  0.9077669902912622
+dev_fscore is   0.9077669902912622
+
+test_recall Precision: 0.9630952999960976
+ test_recall Per-class Recall: 0.9076534143924007
+test_fscore is  0.9277852634489592
+for micro averaging
+dev_recall Precision:   0.9077669902912622
+ dev_recall Per-class Recall:  0.9077669902912622
+dev_fscore is   0.9077669902912622
+
+ test_recall Per-class Recall: 0.9076534143924007
+test_fscore is  0.9277852634489592
+for micro averaging
+dev_recall Precision:   0.9077669902912622
+ dev_recall Per-class Recall:  0.9077669902912622
+dev_fscore is   0.9077669902912622
+
+for micro averaging
+dev_recall Precision:   0.9077669902912622
+ dev_recall Per-class Recall:  0.9077669902912622
+dev_fscore is   0.9077669902912622
+
+dev_recall Precision:   0.9077669902912622
+ dev_recall Per-class Recall:  0.9077669902912622
+dev_fscore is   0.9077669902912622
+
+
+
+test_recall Precision: 0.9077669902912622
+ test_recall Per-class Recall: 0.9077669902912622
+ test_recall Per-class Recall: 0.9077669902912622
+test_fscore is  0.9077669902912622
+for weighted averaging
+dev_recall Precision:  0.9376824625292947
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+
+
+test_recall Precision:  0.9376824625292947
+ test_recall Per-class Recall: 0.9077669902912622
+test_fscore is  0.9119775132467607
+PS C:\Users\yashi\OneDrive\Desktop\ML project>
+
+
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+
+
+test_recall Precision:  0.9376824625292947
+ test_recall Per-class Recall: 0.9077669902912622
+test_fscore is  0.9119775132467607
+PS C:\Users\yashi\OneDrive\Desktop\ML project>
+
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+
+
+test_recall Precision:  0.9376824625292947
+ test_recall Per-class Recall: 0.9077669902912622
+test_fscore is  0.9119775132467607
+PS C:\Users\yashi\OneDrive\Desktop\ML project>
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+
+
+test_recall Precision:  0.9376824625292947
+ test_recall Per-class Recall: 0.9077669902912622
+test_fscore is  0.9119775132467607
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+
+
+test_recall Precision:  0.9376824625292947
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+
+
+test_recall Precision:  0.9376824625292947
+ test_recall Per-class Recall: 0.9077669902912622
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+
+
+test_recall Precision:  0.9376824625292947
+ test_recall Per-class Recall: 0.9077669902912622
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+
+
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+ dev_recall Per-class Recall: 0.9077669902912622
+ dev_recall Per-class Recall: 0.9077669902912622
+ dev_recall Per-class Recall: 0.9077669902912622
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+ dev_recall Per-class Recall: 0.9077669902912622
+dev_fscore is  0.9119775132467607
+
+
+test_recall Precision:  0.9376824625292947
+ test_recall Per-class Recall: 0.9077669902912622
+test_fscore is  0.9119775132467607
+PS C:\Users\yashi\OneDrive\Desktop\ML project>

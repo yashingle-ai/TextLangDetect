@@ -1,4 +1,5 @@
-(* #here we calculate fscore precision recall for each class(languages ) and globally  *)
+#here we calculate fscore precision recall for each class(languages ) and globally  
+
 
 import numpy as np
 import re
@@ -126,114 +127,73 @@ if __name__ == "__main__":
     print("Predictions for new sentences:", new_predictions)
     
     
-    #calculating precision and recall and fscore for each class (language) and globle 
-    #None: Use when you want detailed, per-class metrics.
-    
-    dev_precision,dev_recall,dev_fscore,dev_support=precision_recall_fscore_support(dev_labels,dev_predictions,average=None)
-    print("dev_recall Precision:", dev_precision)
-    print(" dev_recall Per-class Recall:", dev_recall)
-    print("dev_fscore is ",dev_fscore)
-
-    
-    test_precision, test_recall, test_fscore, test_support=precision_recall_fscore_support(dev_labels,dev_predictions,average=None)
-    print("test_recall Precision:", test_precision)
-    print(" test_recall Per-class Recall:", test_recall)
-    print("test_fscore is ",test_fscore)
-    
-    
-#output   
-#     dev_recall Precision: [1.         0.94623656 0.98850575 1.         1.         1.
-#  1.         1.         1.         0.65930599 1.        ]
-#  dev_recall Per-class Recall: [0.7704918  0.98876404 0.95555556 0.95862069 0.96774194 0.74489796
-#  0.93055556 0.96078431 0.8317757  1.         0.875     ]
-# dev_fscore is  [0.87037037 0.96703297 0.97175141 0.97887324 0.98360656 0.85380117
-#  0.96402878 0.98       0.90816327 0.79467681 0.93333333]
-# test_recall Precision: [1.         0.94623656 0.98850575 1.         1.         1.
-#  1.         1.         1.         0.65930599 1.        ]
-#  test_recall Per-class Recall: [0.7704918  0.98876404 0.95555556 0.95862069 0.96774194 0.74489796
-#  0.93055556 0.96078431 0.8317757  1.         0.875     ]
-# test_fscore is  [0.87037037 0.96703297 0.97175141 0.97887324 0.98360656 0.85380117
-#  0.96402878 0.98       0.90816327 0.79467681 0.93333333]
-
-
-
-#for macro averaging 
-# macro: Use when you want equal importance for all classes.
-
-    dev_precision,dev_recall,dev_fscore,dev_support=precision_recall_fscore_support(dev_labels,dev_predictions,average="macro")
-    
-    print('for macro averaging ')
-    print("dev_recall Precision:", dev_precision)
-    print(" dev_recall Per-class Recall:", dev_recall)
-    print("dev_fscore is ",dev_fscore)
-
-    
-    test_precision, test_recall, test_fscore, test_support=precision_recall_fscore_support(dev_labels,dev_predictions,average="macro")
-    print("test_recall Precision:", test_precision)
-    print(" test_recall Per-class Recall:", test_recall)
-    print("test_fscore is ",test_fscore)
-    
-# output
-# for macro averaging 
-# dev_recall Precision: 0.9630952999960976
-#  dev_recall Per-class Recall: 0.9076534143924007
-# dev_fscore is  0.9277852634489592
-# test_recall Precision: 0.9630952999960976
-#  test_recall Per-class Recall: 0.9076534143924007
-# test_fscore is  0.9277852634489592
-
-
-#for micro averaging 
-# micro: Use when class imbalance is acceptable, and you care about overall accuracy.
-
-    print("for micro averaging")
-    dev_precision,dev_recall,dev_fscore,dev_support=precision_recall_fscore_support(dev_labels,dev_predictions,average="micro")
-    
-    print("dev_recall Precision:  ", dev_precision)
-    print(" dev_recall Per-class Recall: ", dev_recall)
-    print("dev_fscore is  ",dev_fscore)
-    print('\n')
-    test_precision, test_recall, test_fscore, test_support=precision_recall_fscore_support(dev_labels,dev_predictions,average="micro")
-    print("test_recall Precision:", test_precision)
-    print(" test_recall Per-class Recall:", test_recall)
-    print("test_fscore is ",test_fscore)
-    
-#output  
-# for micro averaging
-# dev_recall Precision:   0.9077669902912622
-#  dev_recall Per-class Recall:  0.9077669902912622
-# dev_fscore is   0.9077669902912622
-
-# test_recall Precision: 0.9077669902912622
-#  test_recall Per-class Recall: 0.9077669902912622
-# test_fscore is  0.9077669902912622
-    
-#for weighted averaging 
-# weighted: Use for imbalanced datasets to account for class proportions.
-    print('for weighted averaging')
-    
-    dev_precision,dev_recall,dev_fscore,dev_support=precision_recall_fscore_support(dev_labels,dev_predictions,average="weighted")
-    
-
-    print("dev_recall Precision: ", dev_precision)
-    print(" dev_recall Per-class Recall:", dev_recall)
-    print("dev_fscore is ",dev_fscore)
-    print('\n')
    
-    test_precision, test_recall, test_fscore, test_support=precision_recall_fscore_support(dev_labels,dev_predictions,average="weighted")
-    print("test_recall Precision: ", test_precision)
-    print(" test_recall Per-class Recall:", test_recall)
-    print("test_fscore is ",test_fscore)
-    
-#output 
-#     for weighted averaging
-# dev_recall Precision:  0.9376824625292947
-#  dev_recall Per-class Recall: 0.9077669902912622
-# dev_fscore is  0.9119775132467607
 
-# test_recall Precision:  0.9376824625292947
-#  test_recall Per-class Recall: 0.9077669902912622
-# test_fscore is  0.9119775132467607
+# Calculate metrics for each class (no averaging)
+    dev_precision, dev_recall, dev_fscore, dev_support = precision_recall_fscore_support(dev_labels, dev_predictions, average=None)
+    print("Per-Class Metrics (No Averaging):")
+    print("Dev Precision:", dev_precision)
+    print("Dev Recall:", dev_recall)
+    print("Dev F1-Score:", dev_fscore)
+    print("\n")
+
+    test_precision, test_recall, test_fscore, test_support = precision_recall_fscore_support(dev_labels, dev_predictions, average=None)
+    print("Test Precision:", test_precision)
+    print("Test Recall:", test_recall)
+    print("Test F1-Score:", test_fscore)
+    print("\n")
+
+# Output for no averaging
+# (Insert the corresponding outputs here as comments for better understanding)
+
+# For Macro Averaging
+    print("For Macro Averaging:")
+    dev_precision, dev_recall, dev_fscore, _ = precision_recall_fscore_support(dev_labels, dev_predictions, average="macro")
+    print("Dev Precision:", dev_precision)
+    print("Dev Recall:", dev_recall)
+    print("Dev F1-Score:", dev_fscore)
+
+    test_precision, test_recall, test_fscore, _ = precision_recall_fscore_support(dev_labels, dev_predictions, average="macro")
+    print("Test Precision:", test_precision)
+    print("Test Recall:", test_recall)
+    print("Test F1-Score:", test_fscore)
+    print("\n")
+
+# Output for macro averaging
+# (Insert corresponding outputs here as comments)
+
+# For Micro Averaging
+    print("For Micro Averaging:")
+    dev_precision, dev_recall, dev_fscore, _ = precision_recall_fscore_support(dev_labels, dev_predictions, average="micro")
+    print("Dev Precision:", dev_precision)
+    print("Dev Recall:", dev_recall)
+    print("Dev F1-Score:", dev_fscore)
+
+    test_precision, test_recall, test_fscore, _ = precision_recall_fscore_support(dev_labels, dev_predictions, average="micro")
+    print("Test Precision:", test_precision)
+    print("Test Recall:", test_recall)
+    print("Test F1-Score:", test_fscore)
+    print("\n")
+
+# Output for micro averaging
+# (Insert corresponding outputs here as comments)
+
+# For Weighted Averaging
+    print("For Weighted Averaging:")
+    dev_precision, dev_recall, dev_fscore, _ = precision_recall_fscore_support(dev_labels, dev_predictions, average="weighted")
+    print("Dev Precision:", dev_precision)
+    print("Dev Recall:", dev_recall)
+    print("Dev F1-Score:", dev_fscore)
+
+    test_precision, test_recall, test_fscore, _ = precision_recall_fscore_support(dev_labels, dev_predictions, average="weighted")
+    print("Test Precision:", test_precision)
+    print("Test Recall:", test_recall)
+    print("Test F1-Score:", test_fscore)
+
+# Output for weighted averaging
+# (Insert corresponding outputs here as comments)
+
+    
     
     
     

@@ -144,7 +144,7 @@ if __name__ == "__main__":
     print("\n")
 
 # Output for no averaging
-# (Insert the corresponding outputs here as comments for better understanding)
+
 
 # For Macro Averaging
     print("For Macro Averaging:")
@@ -160,7 +160,7 @@ if __name__ == "__main__":
     print("\n")
 
 # Output for macro averaging
-# (Insert corresponding outputs here as comments)
+
 
 # For Micro Averaging
     print("For Micro Averaging:")
@@ -176,7 +176,7 @@ if __name__ == "__main__":
     print("\n")
 
 # Output for micro averaging
-# (Insert corresponding outputs here as comments)
+
 
 # For Weighted Averaging
     print("For Weighted Averaging:")
@@ -191,7 +191,7 @@ if __name__ == "__main__":
     print("Test F1-Score:", test_fscore)
 
 # Output for weighted averaging
-# (Insert corresponding outputs here as comments)
+
 
     
     

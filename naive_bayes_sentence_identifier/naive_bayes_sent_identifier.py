@@ -116,7 +116,7 @@ if __name__ == "__main__":
     # Example predictions for new sentences
     new_sentences = [
         "यह एक नया उदाहरण है",  # Hindi
-        "This is a test sentence.",  # English
+        " I a learning machine learning vaive bayes algorithm .",  # English
     ]
     new_predictions = nb_tfidf.predict(new_sentences)
     print("Predictions for new sentences:", new_predictions)

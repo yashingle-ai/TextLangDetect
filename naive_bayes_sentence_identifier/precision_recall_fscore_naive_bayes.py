@@ -128,6 +128,10 @@ if __name__ == "__main__":
     
     
    
+# Precision: How many predicted positives are true positives.
+# Recall: How many actual positives are correctly predicted.
+# F1-Score: The harmonic mean of precision and recall.
+# Support: The number of occurrences of each class in the true labels (y_true).
 
 # Calculate metrics for each class (no averaging)
     dev_precision, dev_recall, dev_fscore, dev_support = precision_recall_fscore_support(dev_labels, dev_predictions, average=None)
@@ -143,7 +147,7 @@ if __name__ == "__main__":
     print("Test F1-Score:", test_fscore)
     print("\n")
 
-# Output for no averaging
+
 
 
 # For Macro Averaging
@@ -159,7 +163,7 @@ if __name__ == "__main__":
     print("Test F1-Score:", test_fscore)
     print("\n")
 
-# Output for macro averaging
+
 
 
 # For Micro Averaging
@@ -175,7 +179,7 @@ if __name__ == "__main__":
     print("Test F1-Score:", test_fscore)
     print("\n")
 
-# Output for micro averaging
+
 
 
 # For Weighted Averaging
@@ -190,7 +194,7 @@ if __name__ == "__main__":
     print("Test Recall:", test_recall)
     print("Test F1-Score:", test_fscore)
 
-# Output for weighted averaging
+
 
 
     

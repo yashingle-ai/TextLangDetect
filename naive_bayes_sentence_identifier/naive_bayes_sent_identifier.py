@@ -86,18 +86,20 @@ def load_data(sentence_file, label_file):
 
 
 if __name__ == "__main__":
-    # Replace with your file paths
-    train_sentence_file = 'C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\text_suffling\\shuffle_train_sent_all.txt'
-    train_label_file = 'C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\text_suffling\\shuffle_train_label_all.txt'
-    dev_sentence_file = 'C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\text_suffling\\shuffle_dev_sent_all.txt'
-    dev_label_file = 'C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\text_suffling\\shuffle_dev_label_all.txt'
-    test_sentence_file = 'C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\text_suffling\\shuffle_test_sent_all.txt'
-    test_label_file = 'C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\text_suffling\\shuffle_test_label_all.txt'
+    parser = argparse.ArgumentParser(description="Naive Bayes Classifier with TF-IDF")
+    parser.add_argument('--train_sentences', required=True, help="Path to training sentences file")
+    parser.add_argument('--train_labels', required=True, help="Path to training labels file")
+    parser.add_argument('--dev_sentences', required=True, help="Path to development sentences file")
+    parser.add_argument('--dev_labels', required=True, help="Path to development labels file")
+    parser.add_argument('--test_sentences', required=True, help="Path to test sentences file")
+    parser.add_argument('--test_labels', required=True, help="Path to test labels file")
+
+    args = parser.parse_args()
 
     # Load datasets
-    train_sentences, train_labels = load_data(train_sentence_file, train_label_file)
-    dev_sentences, dev_labels = load_data(dev_sentence_file, dev_label_file)
-    test_sentences, test_labels = load_data(test_sentence_file, test_label_file)
+    train_sentences, train_labels = load_data(args.train_sentences, args.train_labels)
+    dev_sentences, dev_labels = load_data(args.dev_sentences, args.dev_labels)
+    test_sentences, test_labels = load_data(args.test_sentences, args.test_labels)
 
     # Initialize and train the classifier on the training set
     nb_tfidf = NaiveBayesTFIDF()
@@ -116,7 +118,7 @@ if __name__ == "__main__":
     # Example predictions for new sentences
     new_sentences = [
         "यह एक नया उदाहरण है",  # Hindi
-        " I a learning machine learning vaive bayes algorithm .",  # English
+        "I am learning machine learning naive bayes algorithm.",  # English
     ]
     new_predictions = nb_tfidf.predict(new_sentences)
     print("Predictions for new sentences:", new_predictions)

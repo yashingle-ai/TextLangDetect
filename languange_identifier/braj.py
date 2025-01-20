@@ -1,12 +1,11 @@
 import re
-from nltk.tokenize import sent_tokenize, RegexpTokenizer
+import nltk
+from nltk.tokenize import word_tokenize, sent_tokenize
 
-# Braj Text Example
-braj_text = """
-राधे राधे! ब्रजभाषा के रसिक लोगन के जय हो। 
-मोरे ईमेल: braj.rasik@gmail.com 
-फोन नंबर: +91 12345 67890
-कहे मोहन, "बृज भूमि के रज माटी चंदन समान।" 
+# Braj Text
+braj_text = '''
+श्रीकृष्ण सदा ब्रजवासियों के प्रिय रहें। ब्रजभूमि सदा से ही पवित्र और सुंदर रही है। 
+हर भक्त को ब्रजभूमि की यात्रा करनी चाहिए। 
 श्रीकृष्ण गोपाल! ब्रज भूमि के सुंदरता जग में अद्भुत मानी गई। 
 यमुना किनारे के कुंजवनन में ग्वाल-बाल संग खेलत नंदलाल के रूप के दर्शन करब, तो मन आनंदित हो जाइ। 
 गोपियां मोहन के मुरली के मधुर स्वर सुनि, सब कुछ भुला देत रहीं। 
@@ -14,33 +13,40 @@ braj_text = """
 ब्रज के रज माटी, जेहके स्पर्श मात्र से आत्मा पवित्र हो जाइ। 
 गौशाला के पास, ग्वाल-बाल दूध-दही लेके बाजार चलत रहे। 
 कहे सुदामा, "हे गोविंद! तेरो प्रेम अछोर ह।"
-"""
+Email: kanha.braj@gmail.com  राधा.श्री@ब्रज.कॉम  
+Mobile: +९१ ९८५६७ १२३४५  9876543210  
+ब्रजभूमि में गोवर्धन पर्वत और यमुना नदी का विशेष महत्व है। +91 9876543210
+'''
 
-# Define Braj Unicode block
-braj_unicode_block = r'[\u0900-\u097F\u200C\u200D\w]+'  # For Devanagari script (used in Braj) and alphanumeric characters
+# Braj Unicode Block and Digit Block
+braj_unicode_block = r'[\u0900-\u097F]' 
+braj_digit_block = r'[\u0966-\u096F]'   
 
-# Sentence Splitting
-print("Sentences in Braj Text:")
-sentences = sent_tokenize(braj_text)  # Sentence tokenization
-for sentence in sentences:
-    print(sentence)
+# 1. Word Tokenization
+braj_word_pattern = r'[\u0900-\u097F]+' 
+braj_words = re.findall(braj_word_pattern, braj_text)
+print("Braj Words:", braj_words)
 
-# Word Tokenization
-print("\nWord Tokenization for Each Sentence:")
-regexp_tokenizer = RegexpTokenizer(braj_unicode_block)  # Tokenize words based on Braj and Devanagari characters
-for sentence in sentences:
-    words = regexp_tokenizer.tokenize(sentence)
-    print(f"Words in sentence: {sentence}")
-    print(words)
+# 2. Sentence Tokenization (Sentences ending with ।, !, or ?)
+braj_sentence_pattern = r'[\u0900-\u097F\s]+[।!?]'
+braj_sentences = re.findall(braj_sentence_pattern, braj_text)
+print("\nBraj Sentences (Regex):", braj_sentences)
 
-# Email Detection
-email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
-emails = re.findall(email_pattern, braj_text)
-print("\nEmails Found in the Text:")
-print(emails)
 
-# Mobile Number Detection
-mobile_pattern = r'\+?[0-9]{1,3}[\s-]?[0-9]{5}[\s-]?[0-9]{5}'
-mobile_numbers = re.findall(mobile_pattern, braj_text)
-print("\nMobile Numbers Found in the Text:")
-print(mobile_numbers)
+print(len(braj_sentences))
+
+# 3. Paragraph Tokenization
+braj_paragraphs = braj_text.split("\n\n")
+print("\nBraj Paragraphs:")
+for para in braj_paragraphs:
+    print(para)
+
+# 4. Email Extraction (Braj + English Emails)
+email_pattern_braj = r'[\u0900-\u097Fa-zA-Z0-9._%+-]+@[\u0900-\u097Fa-zA-Z0-9.-]+\.[\u0900-\u097Fa-zA-Z]{2,}'
+braj_emails = re.findall(email_pattern_braj, braj_text)
+print("\nBraj Emails:", braj_emails)
+
+# 5. Mobile Number Extraction (Braj and English Digits)
+braj_mobile_pattern = r'(?:\+91\s?)?(?:[\+\u0966-\u096F]{2}\s?)?[\u0966-\u096F0-9]{5}\s?[\u0966-\u096F0-9]{5}'
+braj_mobile_numbers = re.findall(braj_mobile_pattern, braj_text)
+print("\nBraj Mobile Numbers:", braj_mobile_numbers)

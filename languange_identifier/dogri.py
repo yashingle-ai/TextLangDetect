@@ -21,8 +21,12 @@ dogri_unicode_block = r'[\u11680-\u116CF]'
 dogri_digit_block = r'[\u0966-\u096F]'
 
 # 1. Word Tokenization
-dogri_word_pattern = rf'{dogri_unicode_block}+'
-dogri_words = re.findall(dogri_word_pattern, dogri_text)
+#when we use re moudule this is not correclty capture the all dogri words 
+# dogri_word_pattern = rf'{dogri_unicode_block}+'
+# dogri_words = re.findall(dogri_word_pattern, dogri_text)
+# print("Dogri Words:", dogri_words)
+
+dogri_words=wordtokenzie(dogri_text)
 print("Dogri Words:", dogri_words)
 
 # 2. Sentence Tokenization (Sentences ending with । or ! or ?)

@@ -1,3 +1,5 @@
+#this text releted to santhali language
+
 import re
 import nltk
 from nltk.tokenize import word_tokenize

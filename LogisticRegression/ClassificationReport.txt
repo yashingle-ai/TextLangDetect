@@ -1,0 +1,38 @@
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.92      0.77      0.84        62
+         ben       0.98      0.94      0.96        90
+         eng       1.00      0.93      0.97        90
+         guj       1.00      0.93      0.96       146
+         hin       1.00      0.95      0.97        94
+         mal       0.73      1.00      0.84       197
+         ori       1.00      0.92      0.96        73
+         pan       1.00      0.95      0.97       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.93      1245
+   macro avg       0.97      0.92      0.94      1245
+weighted avg       0.95      0.93      0.94      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.96      0.70      0.81        61
+         ben       0.98      0.96      0.97        89
+         eng       0.99      0.96      0.97        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.91      0.96        93
+         mal       0.69      1.00      0.81       196
+         ori       1.00      0.92      0.96        72
+         pan       1.00      0.92      0.96       102
+         tam       1.00      0.90      0.95       107
+         tel       1.00      0.93      0.96       209
+         urd       1.00      0.88      0.93        72
+
+    accuracy                           0.92      1236
+   macro avg       0.96      0.91      0.93      1236
+weighted avg       0.95      0.92      0.93      1236

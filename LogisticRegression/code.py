@@ -75,3 +75,67 @@ print(classification_report(y_test, y_pred_test, target_names=label_encoder.clas
 y_pred_dev = best_model.predict(X_dev)
 print("\nDev Set Classification Report:")
 print(classification_report(y_dev, y_pred_dev, target_names=label_encoder.classes_))
+
+
+# precision ,recall,fscore, support=precision_recall_fscore_support(y_pred_test,y_test,average='macro')
+
+
+
+dev_precision, dev_recall, dev_fscore, dev_support = precision_recall_fscore_support(y_dev, y_pred_dev, average=None)
+print("Per-Class Metrics (No Averaging):")
+print("Dev Precision:", dev_precision)
+print("Dev Recall:", dev_recall)
+print("Dev F1-Score:", dev_fscore)
+print("\n")
+
+test_precision, test_recall, test_fscore, test_support = precision_recall_fscore_support(y_dev, y_pred_dev, average=None)
+print("Test Precision:", test_precision)
+print("Test Recall:", test_recall)
+print("Test F1-Score:", test_fscore)
+print("\n")
+
+
+
+
+# For Macro Averaging
+print("For Macro Averaging:")
+dev_precision, dev_recall, dev_fscore, _ = precision_recall_fscore_support(y_dev, y_pred_dev, average="macro")
+print("Dev Precision:", dev_precision)
+print("Dev Recall:", dev_recall)
+print("Dev F1-Score:", dev_fscore)
+
+test_precision, test_recall, test_fscore, _ = precision_recall_fscore_support(y_dev, y_pred_dev, average="macro")
+print("Test Precision:", test_precision)
+print("Test Recall:", test_recall)
+print("Test F1-Score:", test_fscore)
+print("\n")
+
+
+
+
+# For Micro Averaging
+print("For Micro Averaging:")
+dev_precision, dev_recall, dev_fscore, _ = precision_recall_fscore_support(y_dev, y_pred_dev, average="micro")
+print("Dev Precision:", dev_precision)
+print("Dev Recall:", dev_recall)
+print("Dev F1-Score:", dev_fscore)
+
+test_precision, test_recall, test_fscore, _ = precision_recall_fscore_support(y_test, y_pred_test, average="micro")
+print("Test Precision:", test_precision)
+print("Test Recall:", test_recall)
+print("Test F1-Score:", test_fscore)
+print("\n")
+
+
+
+
+# For Weighted Averaging
+print("For Weighted Averaging:")
+dev_precision, dev_recall, dev_fscore, _ = precision_recall_fscore_support(y_test, y_pred_test, average="weighted")
+print("Dev Precision:", dev_precision)
+print("Dev Recall:", dev_recall)
+print("Dev F1-Score:", dev_fscore)
+
+test_precision, test_recall, test_fscore, _ = precision_recall_fscore_support(y_test, y_pred_test, average="weighted")
+print("Test Precision:", test_precision)
+print("Test Recall:", test_recall)

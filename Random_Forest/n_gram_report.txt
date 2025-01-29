@@ -1,0 +1,35 @@
+           precision    recall  f1-score   support
+
+         asm       0.00      0.00      0.00        61
+         ben       1.00      0.58      0.74        89
+         eng       1.00      0.82      0.90        90
+         guj       1.00      0.79      0.88       145
+         hin       1.00      0.60      0.75        93
+         mal       1.00      0.63      0.78       196
+         ori       1.00      0.51      0.68        72
+         pan       1.00      0.38      0.55       102
+         tam       1.00      0.71      0.83       107
+         tel       0.34      1.00      0.51       209
+         urd       1.00      0.81      0.89        72
+
+    accuracy                           0.68      1236
+   macro avg       0.85      0.62      0.68      1236
+weighted avg       0.84      0.68      0.70      1236
+
+Evaluation Metrics (Macro, Micro, Weighted):
+C:\Users\yashi\OneDrive\Desktop\ML project\venv\Lib\site-packages\sklearn\metrics\_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+Macro Averaging:
+Dev Precision: 0.8495349534953495 Dev Recall: 0.6217800127278985 Dev F1-Score: 0.6831724729315988
+Test Precision: 0.9380011577855346 Test Recall: 0.6084767242708966 Test F1-Score: 0.6740232136824659
+
+Micro Averaging:
+Dev Precision: 0.6788025889967637 Dev Recall: 0.6788025889967637 Dev F1-Score: 0.6788025889967637
+Test Precision: 0.668273092369478 Test Recall: 0.668273092369478 Test F1-Score: 0.668273092369478
+C:\Users\yashi\OneDrive\Desktop\ML project\venv\Lib\site-packages\sklearn\metrics\_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+Weighted Averaging:
+Dev Precision: 0.839871244405994 Dev Recall: 0.6788025889967637 Dev F1-Score: 0.69735849907928
+Test Precision: 0.8868559161936188 Test Recall: 0.668273092369478 Test F1-Score: 0.6891521153605279

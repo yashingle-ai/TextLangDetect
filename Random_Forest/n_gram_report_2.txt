@@ -1,0 +1,54 @@
+Best Parameters: {'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_depth': None, 'criterion': 'gini'}
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.98      0.65      0.78        62
+         ben       0.97      0.94      0.96        90
+         eng       1.00      0.91      0.95        90
+         guj       1.00      0.87      0.93       146
+         hin       1.00      0.95      0.97        94
+         mal       0.62      1.00      0.77       197
+         ori       1.00      0.85      0.92        73
+         pan       1.00      0.88      0.94       102
+         tam       1.00      0.85      0.92       108
+         tel       0.99      0.92      0.95       210
+         urd       1.00      0.84      0.91        73
+
+    accuracy                           0.90      1245
+   macro avg       0.96      0.88      0.91      1245
+weighted avg       0.93      0.90      0.90      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.95      0.59      0.73        61
+         ben       0.96      0.92      0.94        89
+         eng       0.99      0.92      0.95        90
+         guj       1.00      0.88      0.94       145
+         hin       1.00      0.91      0.96        93
+         mal       0.61      1.00      0.76       196
+         ori       1.00      0.93      0.96        72
+         pan       1.00      0.85      0.92       102
+         tam       1.00      0.85      0.92       107
+         tel       1.00      0.89      0.94       209
+         urd       1.00      0.85      0.92        72
+
+    accuracy                           0.89      1236
+   macro avg       0.96      0.87      0.90      1236
+weighted avg       0.93      0.89      0.90      1236
+
+Evaluation Metrics (Macro, Micro, Weighted):
+
+Macro Averaging:
+Dev Precision: 0.9551800624556042 Dev Recall: 0.8733086066037963 Dev F1-Score: 0.9034092285908812
+Test Precision: 0.9591599356451048 Test Recall: 0.8777792990127563 Test F1-Score: 0.9084477591073472
+
+Micro Averaging:
+Dev Precision: 0.8923948220064725 Dev Recall: 0.8923948220064725 Dev F1-Score: 0.8923948220064725
+Test Precision: 0.8979919678714859 Test Recall: 0.8979919678714859 Test F1-Score: 0.8979919678714859
+
+Weighted Averaging:
+Dev Precision: 0.9316438941442698 Dev Recall: 0.8923948220064725 Dev F1-Score: 0.8997108333392185
+Test Precision: 0.9343828573567593 Test Recall: 0.8979919678714859 Test F1-Score: 0.9048651574103067

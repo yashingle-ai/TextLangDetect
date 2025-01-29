@@ -1,0 +1,54 @@
+Best Parameters: {'alpha': 0.001}
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.96      0.77      0.86        62
+         ben       0.95      0.97      0.96        90
+         eng       1.00      0.96      0.98        90
+         guj       1.00      0.97      0.99       146
+         hin       1.00      0.96      0.98        94
+         mal       1.00      0.88      0.94       197
+         ori       1.00      0.97      0.99        73
+         pan       0.99      0.97      0.98       102
+         tam       1.00      0.90      0.95       108
+         tel       0.75      1.00      0.86       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.94      1245
+   macro avg       0.97      0.93      0.95      1245
+weighted avg       0.95      0.94      0.94      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.93      0.69      0.79        61
+         ben       0.96      0.96      0.96        89
+         eng       1.00      0.99      0.99        90
+         guj       1.00      0.94      0.97       145
+         hin       1.00      0.94      0.97        93
+         mal       1.00      0.83      0.91       196
+         ori       1.00      0.96      0.98        72
+         pan       0.99      0.94      0.96       102
+         tam       1.00      0.91      0.95       107
+         tel       0.70      1.00      0.82       209
+         urd       1.00      0.92      0.96        72
+
+    accuracy                           0.92      1236
+   macro avg       0.96      0.91      0.93      1236
+weighted avg       0.94      0.92      0.92      1236
+
+Evaluation Metrics (Macro, Micro, Weighted):
+
+Macro Averaging:
+Dev Precision: 0.9614606192672096 Dev Recall: 0.9141319140916014 Dev F1-Score: 0.9323819168898535
+Test Precision: 0.9679500668240112 Test Recall: 0.9306092933746317 Test F1-Score: 0.9458248971686909
+
+Micro Averaging:
+Dev Precision: 0.9207119741100324 Dev Recall: 0.9207119741100324 Dev F1-Score: 0.9207119741100324
+Test Precision: 0.9381526104417671 Test Recall: 0.9381526104417671 Test F1-Score: 0.9381526104417671
+
+Weighted Averaging:
+Dev Precision: 0.9415541922107226 Dev Recall: 0.9207119741100324 Dev F1-Score: 0.9240030584246477
+Test Precision: 0.951394693569398 Test Recall: 0.9381526104417671 Test F1-Score: 0.9403000135737919

@@ -1,0 +1,1031 @@
+Evaluating combination: ('KNN', 'SGD', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.80      0.76      0.78        62
+         ben       0.99      0.94      0.97        90
+         eng       1.00      0.92      0.96        90
+         guj       1.00      0.93      0.96       146
+         hin       1.00      0.95      0.97        94
+         mal       0.93      0.86      0.89       197
+         ori       1.00      0.88      0.93        73
+         pan       0.98      0.92      0.95       102
+         tam       0.97      0.89      0.93       108
+         tel       0.98      0.94      0.96       210
+         urd       0.48      0.97      0.64        73
+
+    accuracy                           0.91      1245
+   macro avg       0.92      0.91      0.90      1245
+weighted avg       0.94      0.91      0.92      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.91      0.69      0.79        61
+         ben       0.98      0.94      0.96        89
+         eng       1.00      0.94      0.97        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.91      0.96        93
+         mal       0.96      0.83      0.89       196
+         ori       1.00      0.92      0.96        72
+         pan       0.96      0.90      0.93       102
+         tam       0.98      0.89      0.93       107
+         tel       0.98      0.92      0.95       209
+         urd       0.39      0.96      0.56        72
+
+    accuracy                           0.89      1236
+   macro avg       0.92      0.89      0.89      1236
+weighted avg       0.94      0.89      0.91      1236
+
+
+Evaluating combination: ('KNN', 'AdaBoost', 'DecisionTree')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.48      0.71      0.58        62
+         ben       0.99      0.74      0.85        90
+         eng       1.00      0.73      0.85        90
+         guj       0.94      0.84      0.88       146
+         hin       1.00      0.73      0.85        94
+         mal       0.69      0.74      0.71       197
+         ori       1.00      0.52      0.68        73
+         pan       0.91      0.78      0.84       102
+         tam       0.85      0.74      0.79       108
+         tel       0.81      0.93      0.87       210
+         urd       0.43      0.86      0.58        73
+
+    accuracy                           0.78      1245
+   macro avg       0.83      0.76      0.77      1245
+weighted avg       0.83      0.78      0.79      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.60      0.64      0.62        61
+         ben       0.98      0.73      0.84        89
+         eng       1.00      0.77      0.87        90
+         guj       0.94      0.82      0.88       145
+         hin       1.00      0.69      0.82        93
+         mal       0.67      0.74      0.70       196
+         ori       1.00      0.57      0.73        72
+         pan       0.84      0.74      0.79       102
+         tam       0.92      0.80      0.86       107
+         tel       0.83      0.89      0.86       209
+         urd       0.36      0.89      0.51        72
+
+    accuracy                           0.77      1236
+   macro avg       0.83      0.75      0.77      1236
+weighted avg       0.83      0.77      0.79      1236
+
+
+Evaluating combination: ('KNN', 'AdaBoost', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.23      0.60      0.33        62
+         ben       0.90      0.48      0.62        90
+         eng       1.00      0.40      0.57        90
+         guj       0.81      0.71      0.75       146
+         hin       0.98      0.48      0.64        94
+         mal       0.54      0.59      0.56       197
+         ori       0.96      0.32      0.47        73
+         pan       0.63      0.39      0.48       102
+         tam       0.55      0.66      0.60       108
+         tel       0.72      0.73      0.73       210
+         urd       0.31      0.77      0.44        73
+
+    accuracy                           0.58      1245
+   macro avg       0.69      0.56      0.56      1245
+weighted avg       0.70      0.58      0.60      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.28      0.54      0.36        61
+         ben       0.94      0.49      0.65        89
+         eng       0.98      0.57      0.72        90
+         guj       0.88      0.63      0.74       145
+         hin       0.98      0.58      0.73        93
+         mal       0.48      0.56      0.51       196
+         ori       0.88      0.31      0.45        72
+         pan       0.63      0.51      0.57       102
+         tam       0.68      0.69      0.69       107
+         tel       0.76      0.73      0.74       209
+         urd       0.27      0.78      0.40        72
+
+    accuracy                           0.60      1236
+   macro avg       0.70      0.58      0.60      1236
+weighted avg       0.71      0.60      0.62      1236
+
+
+Evaluating combination: ('KNN', 'DecisionTree', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.71      0.77      0.74        62
+         ben       0.99      0.92      0.95        90
+         eng       1.00      0.90      0.95        90
+         guj       0.99      0.90      0.94       146
+         hin       1.00      0.95      0.97        94
+         mal       0.92      0.86      0.89       197
+         ori       1.00      0.84      0.91        73
+         pan       0.96      0.88      0.92       102
+         tam       0.94      0.87      0.90       108
+         tel       0.98      0.93      0.96       210
+         urd       0.47      0.99      0.64        73
+
+    accuracy                           0.90      1245
+   macro avg       0.91      0.89      0.89      1245
+weighted avg       0.93      0.90      0.91      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.78      0.66      0.71        61
+         ben       0.97      0.96      0.96        89
+         eng       1.00      0.93      0.97        90
+         guj       0.99      0.88      0.93       145
+         hin       1.00      0.86      0.92        93
+         mal       0.92      0.82      0.87       196
+         ori       1.00      0.90      0.95        72
+         pan       0.96      0.85      0.90       102
+         tam       0.96      0.87      0.91       107
+         tel       0.98      0.90      0.94       209
+         urd       0.38      0.96      0.54        72
+
+    accuracy                           0.87      1236
+   macro avg       0.90      0.87      0.87      1236
+weighted avg       0.93      0.87      0.89      1236
+
+
+Evaluating combination: ('RandomForest', 'LogisticRegression', 'SGD')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       1.00      0.76      0.86        62
+         ben       0.99      0.96      0.97        90
+         eng       1.00      0.93      0.97        90
+         guj       1.00      0.94      0.97       146
+         hin       1.00      0.96      0.98        94
+         mal       0.71      1.00      0.83       197
+         ori       1.00      0.89      0.94        73
+         pan       1.00      0.94      0.97       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.93      1245
+   macro avg       0.97      0.92      0.94      1245
+weighted avg       0.95      0.93      0.94      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.96      0.70      0.81        61
+         ben       0.98      0.94      0.96        89
+         eng       0.99      0.96      0.97        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.91      0.96        93
+         mal       0.68      1.00      0.81       196
+         ori       1.00      0.93      0.96        72
+         pan       1.00      0.91      0.95       102
+         tam       1.00      0.88      0.94       107
+         tel       1.00      0.93      0.96       209
+         urd       1.00      0.88      0.93        72
+
+    accuracy                           0.92      1236
+   macro avg       0.96      0.91      0.93      1236
+weighted avg       0.94      0.92      0.93      1236
+
+
+Evaluating combination: ('RandomForest', 'LogisticRegression', 'AdaBoost')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.96      0.74      0.84        62
+         ben       0.98      0.96      0.97        90
+         eng       1.00      0.93      0.97        90
+         guj       1.00      0.94      0.97       146
+         hin       1.00      0.96      0.98        94
+         mal       0.71      1.00      0.83       197
+         ori       1.00      0.89      0.94        73
+         pan       1.00      0.94      0.97       102
+         tam       1.00      0.89      0.94       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.93      1245
+   macro avg       0.97      0.92      0.94      1245
+weighted avg       0.95      0.93      0.93      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.96      0.70      0.81        61
+         ben       0.98      0.94      0.96        89
+         eng       0.99      0.96      0.97        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.91      0.96        93
+         mal       0.68      1.00      0.81       196
+         ori       1.00      0.93      0.96        72
+         pan       1.00      0.92      0.96       102
+         tam       1.00      0.89      0.94       107
+         tel       1.00      0.92      0.96       209
+         urd       1.00      0.88      0.93        72
+
+    accuracy                           0.92      1236
+   macro avg       0.96      0.91      0.93      1236
+weighted avg       0.94      0.92      0.93      1236
+
+
+Evaluating combination: ('RandomForest', 'LogisticRegression', 'DecisionTree')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.94      0.76      0.84        62
+         ben       0.99      0.93      0.96        90
+         eng       1.00      0.93      0.97        90
+         guj       1.00      0.93      0.96       146
+         hin       1.00      0.96      0.98        94
+         mal       0.70      1.00      0.82       197
+         ori       1.00      0.86      0.93        73
+         pan       1.00      0.94      0.97       102
+         tam       1.00      0.89      0.94       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.93      1245
+   macro avg       0.97      0.91      0.93      1245
+weighted avg       0.95      0.93      0.93      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.95      0.69      0.80        61
+         ben       0.99      0.94      0.97        89
+         eng       0.99      0.94      0.97        90
+         guj       1.00      0.91      0.95       145
+         hin       1.00      0.91      0.96        93
+         mal       0.66      1.00      0.79       196
+         ori       1.00      0.93      0.96        72
+         pan       1.00      0.90      0.95       102
+         tam       1.00      0.87      0.93       107
+         tel       1.00      0.91      0.95       209
+         urd       1.00      0.88      0.93        72
+
+    accuracy                           0.91      1236
+   macro avg       0.96      0.90      0.92      1236
+weighted avg       0.94      0.91      0.92      1236
+
+
+Evaluating combination: ('RandomForest', 'LogisticRegression', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.98      0.76      0.85        62
+         ben       0.97      0.98      0.97        90
+         eng       1.00      0.94      0.97        90
+         guj       1.00      0.95      0.98       146
+         hin       1.00      0.96      0.98        94
+         mal       0.75      1.00      0.86       197
+         ori       1.00      0.96      0.98        73
+         pan       1.00      0.96      0.98       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.94      1245
+   macro avg       0.97      0.93      0.95      1245
+weighted avg       0.96      0.94      0.95      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       1.00      0.70      0.83        61
+         ben       0.97      0.98      0.97        89
+         eng       0.99      0.98      0.98        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.92      0.96        93
+         mal       0.71      1.00      0.83       196
+         ori       1.00      0.96      0.98        72
+         pan       1.00      0.92      0.96       102
+         tam       1.00      0.91      0.95       107
+         tel       1.00      0.93      0.96       209
+         urd       1.00      0.89      0.94        72
+
+    accuracy                           0.93      1236
+   macro avg       0.97      0.92      0.94      1236
+weighted avg       0.95      0.93      0.94      1236
+
+
+Evaluating combination: ('RandomForest', 'SGD', 'AdaBoost')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       1.00      0.73      0.84        62
+         ben       0.98      0.96      0.97        90
+         eng       1.00      0.93      0.97        90
+         guj       1.00      0.94      0.97       146
+         hin       1.00      0.96      0.98        94
+         mal       0.70      1.00      0.83       197
+         ori       1.00      0.88      0.93        73
+         pan       1.00      0.94      0.97       102
+         tam       1.00      0.89      0.94       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.93      1245
+   macro avg       0.97      0.91      0.94      1245
+weighted avg       0.95      0.93      0.93      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.93      0.69      0.79        61
+         ben       0.99      0.93      0.96        89
+         eng       0.99      0.96      0.97        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.91      0.96        93
+         mal       0.67      1.00      0.80       196
+         ori       1.00      0.93      0.96        72
+         pan       1.00      0.90      0.95       102
+         tam       1.00      0.88      0.94       107
+         tel       1.00      0.92      0.96       209
+         urd       1.00      0.88      0.93        72
+
+    accuracy                           0.92      1236
+   macro avg       0.96      0.90      0.93      1236
+weighted avg       0.94      0.92      0.92      1236
+
+
+Evaluating combination: ('RandomForest', 'SGD', 'DecisionTree')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.96      0.74      0.84        62
+         ben       0.99      0.92      0.95        90
+         eng       1.00      0.93      0.97        90
+         guj       1.00      0.92      0.96       146
+         hin       1.00      0.94      0.97        94
+         mal       0.68      1.00      0.81       197
+         ori       1.00      0.86      0.93        73
+         pan       1.00      0.92      0.96       102
+         tam       1.00      0.89      0.94       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.92      1245
+   macro avg       0.97      0.91      0.93      1245
+weighted avg       0.95      0.92      0.93      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.95      0.66      0.78        61
+         ben       0.97      0.94      0.95        89
+         eng       0.99      0.96      0.97        90
+         guj       1.00      0.90      0.95       145
+         hin       1.00      0.91      0.96        93
+         mal       0.65      1.00      0.79       196
+         ori       1.00      0.92      0.96        72
+         pan       1.00      0.88      0.94       102
+         tam       1.00      0.88      0.94       107
+         tel       1.00      0.90      0.95       209
+         urd       1.00      0.88      0.93        72
+
+    accuracy                           0.91      1236
+   macro avg       0.96      0.89      0.92      1236
+weighted avg       0.94      0.91      0.91      1236
+
+
+Evaluating combination: ('RandomForest', 'SGD', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       1.00      0.74      0.85        62
+         ben       0.96      0.99      0.97        90
+         eng       1.00      0.94      0.97        90
+         guj       1.00      0.95      0.98       146
+         hin       1.00      0.96      0.98        94
+         mal       0.75      1.00      0.86       197
+         ori       1.00      0.96      0.98        73
+         pan       1.00      0.96      0.98       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.94      1245
+   macro avg       0.97      0.93      0.95      1245
+weighted avg       0.96      0.94      0.94      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.98      0.70      0.82        61
+         ben       0.98      0.97      0.97        89
+         eng       0.99      0.98      0.98        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.92      0.96        93
+         mal       0.71      1.00      0.83       196
+         ori       1.00      0.96      0.98        72
+         pan       1.00      0.92      0.96       102
+         tam       1.00      0.91      0.95       107
+         tel       1.00      0.93      0.97       209
+         urd       1.00      0.88      0.93        72
+
+    accuracy                           0.93      1236
+   macro avg       0.97      0.92      0.94      1236
+weighted avg       0.95      0.93      0.93      1236
+
+
+Evaluating combination: ('RandomForest', 'AdaBoost', 'DecisionTree')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.94      0.73      0.82        62
+         ben       0.99      0.93      0.96        90
+         eng       1.00      0.93      0.97        90
+         guj       1.00      0.92      0.96       146
+         hin       1.00      0.94      0.97        94
+         mal       0.67      1.00      0.80       197
+         ori       1.00      0.86      0.93        73
+         pan       1.00      0.89      0.94       102
+         tam       1.00      0.88      0.94       108
+         tel       0.99      0.93      0.96       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.92      1245
+   macro avg       0.96      0.90      0.93      1245
+weighted avg       0.94      0.92      0.92      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.95      0.67      0.79        61
+         ben       0.98      0.94      0.96        89
+         eng       0.99      0.93      0.96        90
+         guj       1.00      0.90      0.95       145
+         hin       1.00      0.90      0.95        93
+         mal       0.63      1.00      0.78       196
+         ori       1.00      0.90      0.95        72
+         pan       1.00      0.87      0.93       102
+         tam       1.00      0.87      0.93       107
+         tel       1.00      0.90      0.95       209
+         urd       1.00      0.86      0.93        72
+
+    accuracy                           0.90      1236
+   macro avg       0.96      0.89      0.92      1236
+weighted avg       0.94      0.90      0.91      1236
+
+
+Evaluating combination: ('RandomForest', 'AdaBoost', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       1.00      0.74      0.85        62
+         ben       0.96      0.99      0.97        90
+         eng       1.00      0.94      0.97        90
+         guj       1.00      0.97      0.99       146
+         hin       1.00      0.96      0.98        94
+         mal       0.76      1.00      0.87       197
+         ori       1.00      0.97      0.99        73
+         pan       1.00      0.96      0.98       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.95      1245
+   macro avg       0.97      0.93      0.95      1245
+weighted avg       0.96      0.95      0.95      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.96      0.70      0.81        61
+         ben       0.97      0.96      0.96        89
+         eng       0.99      0.98      0.98        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.94      0.97        93
+         mal       0.72      1.00      0.83       196
+         ori       1.00      0.96      0.98        72
+         pan       1.00      0.92      0.96       102
+         tam       1.00      0.91      0.95       107
+         tel       1.00      0.93      0.97       209
+         urd       1.00      0.89      0.94        72
+
+    accuracy                           0.93      1236
+   macro avg       0.97      0.92      0.94      1236
+weighted avg       0.95      0.93      0.94      1236
+
+
+Evaluating combination: ('RandomForest', 'DecisionTree', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.98      0.76      0.85        62
+         ben       0.99      0.98      0.98        90
+         eng       1.00      0.94      0.97        90
+         guj       1.00      0.95      0.97       146
+         hin       1.00      0.96      0.98        94
+         mal       0.74      1.00      0.85       197
+         ori       1.00      0.96      0.98        73
+         pan       1.00      0.96      0.98       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.94      1245
+   macro avg       0.97      0.93      0.95      1245
+weighted avg       0.96      0.94      0.94      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.98      0.70      0.82        61
+         ben       0.98      0.97      0.97        89
+         eng       0.99      0.97      0.98        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.91      0.96        93
+         mal       0.70      1.00      0.82       196
+         ori       1.00      0.96      0.98        72
+         pan       1.00      0.92      0.96       102
+         tam       1.00      0.91      0.95       107
+         tel       1.00      0.93      0.96       209
+         urd       1.00      0.88      0.93        72
+
+    accuracy                           0.93      1236
+   macro avg       0.97      0.92      0.94      1236
+weighted avg       0.95      0.93      0.93      1236
+
+
+Evaluating combination: ('LogisticRegression', 'SGD', 'AdaBoost')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.98      0.76      0.85        62
+         ben       0.98      0.97      0.97        90
+         eng       1.00      0.93      0.97        90
+         guj       1.00      0.94      0.97       146
+         hin       1.00      0.96      0.98        94
+         mal       0.73      1.00      0.84       197
+         ori       1.00      0.93      0.96        73
+         pan       1.00      0.95      0.97       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.94      1245
+   macro avg       0.97      0.92      0.94      1245
+weighted avg       0.95      0.94      0.94      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.96      0.70      0.81        61
+         ben       0.98      0.94      0.96        89
+         eng       0.99      0.96      0.97        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.91      0.96        93
+         mal       0.69      1.00      0.81       196
+         ori       1.00      0.93      0.96        72
+         pan       1.00      0.92      0.96       102
+         tam       1.00      0.89      0.94       107
+         tel       1.00      0.93      0.96       209
+         urd       1.00      0.88      0.93        72
+
+    accuracy                           0.92      1236
+   macro avg       0.96      0.91      0.93      1236
+weighted avg       0.95      0.92      0.93      1236
+
+
+Evaluating combination: ('LogisticRegression', 'SGD', 'DecisionTree')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.94      0.76      0.84        62
+         ben       0.99      0.92      0.95        90
+         eng       1.00      0.93      0.97        90
+         guj       1.00      0.93      0.96       146
+         hin       1.00      0.96      0.98        94
+         mal       0.70      1.00      0.82       197
+         ori       1.00      0.86      0.93        73
+         pan       1.00      0.94      0.97       102
+         tam       1.00      0.89      0.94       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.93      1245
+   macro avg       0.97      0.91      0.93      1245
+weighted avg       0.95      0.93      0.93      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.98      0.70      0.82        61
+         ben       0.99      0.94      0.97        89
+         eng       0.99      0.94      0.97        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.91      0.96        93
+         mal       0.67      1.00      0.80       196
+         ori       1.00      0.93      0.96        72
+         pan       1.00      0.90      0.95       102
+         tam       1.00      0.87      0.93       107
+         tel       1.00      0.93      0.96       209
+         urd       1.00      0.88      0.93        72
+
+    accuracy                           0.92      1236
+   macro avg       0.97      0.90      0.93      1236
+weighted avg       0.94      0.92      0.92      1236
+
+
+Evaluating combination: ('LogisticRegression', 'SGD', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.98      0.74      0.84        62
+         ben       0.96      0.98      0.97        90
+         eng       1.00      0.94      0.97        90
+         guj       1.00      0.96      0.98       146
+         hin       1.00      0.96      0.98        94
+         mal       0.76      1.00      0.86       197
+         ori       1.00      0.97      0.99        73
+         pan       1.00      0.96      0.98       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.94      1245
+   macro avg       0.97      0.93      0.95      1245
+weighted avg       0.96      0.94      0.95      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       1.00      0.70      0.83        61
+         ben       0.97      0.98      0.97        89
+         eng       0.99      0.98      0.98        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.92      0.96        93
+         mal       0.71      1.00      0.83       196
+         ori       1.00      0.96      0.98        72
+         pan       1.00      0.92      0.96       102
+         tam       1.00      0.91      0.95       107
+         tel       1.00      0.93      0.97       209
+         urd       1.00      0.89      0.94        72
+
+    accuracy                           0.93      1236
+   macro avg       0.97      0.92      0.94      1236
+weighted avg       0.95      0.93      0.94      1236
+
+
+Evaluating combination: ('LogisticRegression', 'AdaBoost', 'DecisionTree')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.94      0.76      0.84        62
+         ben       0.99      0.92      0.95        90
+         eng       1.00      0.93      0.97        90
+         guj       1.00      0.93      0.96       146
+         hin       1.00      0.94      0.97        94
+         mal       0.70      1.00      0.82       197
+         ori       1.00      0.86      0.93        73
+         pan       1.00      0.94      0.97       102
+         tam       1.00      0.89      0.94       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.93      1245
+   macro avg       0.96      0.91      0.93      1245
+weighted avg       0.95      0.93      0.93      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.95      0.69      0.80        61
+         ben       0.98      0.93      0.95        89
+         eng       0.99      0.94      0.97        90
+         guj       1.00      0.91      0.95       145
+         hin       1.00      0.91      0.96        93
+         mal       0.66      1.00      0.80       196
+         ori       1.00      0.94      0.97        72
+         pan       1.00      0.90      0.95       102
+         tam       1.00      0.87      0.93       107
+         tel       1.00      0.92      0.96       209
+         urd       1.00      0.88      0.93        72
+
+    accuracy                           0.92      1236
+   macro avg       0.96      0.90      0.92      1236
+weighted avg       0.94      0.92      0.92      1236
+
+
+Evaluating combination: ('LogisticRegression', 'AdaBoost', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.98      0.76      0.85        62
+         ben       0.96      0.98      0.97        90
+         eng       1.00      0.94      0.97        90
+         guj       1.00      0.97      0.99       146
+         hin       1.00      0.96      0.98        94
+         mal       0.77      1.00      0.87       197
+         ori       1.00      0.97      0.99        73
+         pan       1.00      0.97      0.99       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.95      1245
+   macro avg       0.97      0.93      0.95      1245
+weighted avg       0.96      0.95      0.95      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       1.00      0.70      0.83        61
+         ben       0.97      0.98      0.97        89
+         eng       0.99      0.98      0.98        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.94      0.97        93
+         mal       0.72      1.00      0.84       196
+         ori       1.00      0.96      0.98        72
+         pan       1.00      0.93      0.96       102
+         tam       1.00      0.91      0.95       107
+         tel       1.00      0.93      0.97       209
+         urd       1.00      0.89      0.94        72
+
+    accuracy                           0.93      1236
+   macro avg       0.97      0.92      0.94      1236
+weighted avg       0.95      0.93      0.94      1236
+
+
+Evaluating combination: ('LogisticRegression', 'DecisionTree', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       1.00      0.76      0.86        62
+         ben       0.98      0.99      0.98        90
+         eng       1.00      0.94      0.97        90
+         guj       1.00      0.95      0.98       146
+         hin       1.00      0.96      0.98        94
+         mal       0.75      1.00      0.86       197
+         ori       1.00      0.96      0.98        73
+         pan       1.00      0.96      0.98       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.94      1245
+   macro avg       0.97      0.93      0.95      1245
+weighted avg       0.96      0.94      0.95      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       1.00      0.70      0.83        61
+         ben       0.98      0.98      0.98        89
+         eng       0.99      0.98      0.98        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.92      0.96        93
+         mal       0.71      1.00      0.83       196
+         ori       1.00      0.96      0.98        72
+         pan       1.00      0.92      0.96       102
+         tam       1.00      0.91      0.95       107
+         tel       1.00      0.93      0.96       209
+         urd       1.00      0.89      0.94        72
+
+    accuracy                           0.93      1236
+   macro avg       0.97      0.92      0.94      1236
+weighted avg       0.95      0.93      0.94      1236
+
+
+Evaluating combination: ('SGD', 'AdaBoost', 'DecisionTree')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.94      0.74      0.83        62
+         ben       1.00      0.91      0.95        90
+         eng       1.00      0.92      0.96        90
+         guj       1.00      0.91      0.95       146
+         hin       1.00      0.93      0.96        94
+         mal       0.65      1.00      0.79       197
+         ori       1.00      0.86      0.93        73
+         pan       1.00      0.89      0.94       102
+         tam       1.00      0.86      0.93       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.88      0.93        73
+
+    accuracy                           0.91      1245
+   macro avg       0.96      0.89      0.92      1245
+weighted avg       0.94      0.91      0.92      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.95      0.59      0.73        61
+         ben       0.97      0.93      0.95        89
+         eng       0.99      0.93      0.96        90
+         guj       1.00      0.90      0.95       145
+         hin       1.00      0.89      0.94        93
+         mal       0.61      1.00      0.76       196
+         ori       1.00      0.92      0.96        72
+         pan       1.00      0.84      0.91       102
+         tam       1.00      0.85      0.92       107
+         tel       1.00      0.90      0.95       209
+         urd       1.00      0.86      0.93        72
+
+    accuracy                           0.89      1236
+   macro avg       0.96      0.87      0.90      1236
+weighted avg       0.93      0.89      0.90      1236
+
+
+Evaluating combination: ('SGD', 'AdaBoost', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.98      0.73      0.83        62
+         ben       0.95      0.98      0.96        90
+         eng       1.00      0.94      0.97        90
+         guj       1.00      0.97      0.99       146
+         hin       1.00      0.96      0.98        94
+         mal       0.77      1.00      0.87       197
+         ori       1.00      0.97      0.99        73
+         pan       1.00      0.97      0.99       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.95      1245
+   macro avg       0.97      0.93      0.95      1245
+weighted avg       0.96      0.95      0.95      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       1.00      0.69      0.82        61
+         ben       0.96      0.99      0.97        89
+         eng       0.99      0.98      0.98        90
+         guj       1.00      0.93      0.96       145
+         hin       1.00      0.94      0.97        93
+         mal       0.73      1.00      0.84       196
+         ori       1.00      0.96      0.98        72
+         pan       0.99      0.94      0.96       102
+         tam       1.00      0.91      0.95       107
+         tel       1.00      0.93      0.97       209
+         urd       1.00      0.89      0.94        72
+
+    accuracy                           0.94      1236
+   macro avg       0.97      0.92      0.94      1236
+weighted avg       0.95      0.94      0.94      1236
+
+
+Evaluating combination: ('SGD', 'DecisionTree', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.98      0.76      0.85        62
+         ben       0.97      0.98      0.97        90
+         eng       1.00      0.94      0.97        90
+         guj       1.00      0.95      0.98       146
+         hin       1.00      0.96      0.98        94
+         mal       0.75      1.00      0.86       197
+         ori       1.00      0.96      0.98        73
+         pan       1.00      0.96      0.98       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.94      1245
+   macro avg       0.97      0.93      0.95      1245
+weighted avg       0.96      0.94      0.95      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.98      0.70      0.82        61
+         ben       0.98      0.97      0.97        89
+         eng       0.99      0.98      0.98        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.92      0.96        93
+         mal       0.71      1.00      0.83       196
+         ori       1.00      0.96      0.98        72
+         pan       1.00      0.92      0.96       102
+         tam       1.00      0.91      0.95       107
+         tel       1.00      0.93      0.97       209
+         urd       1.00      0.89      0.94        72
+
+    accuracy                           0.93      1236
+   macro avg       0.97      0.92      0.94      1236
+weighted avg       0.95      0.93      0.94      1236
+
+
+Evaluating combination: ('AdaBoost', 'DecisionTree', 'NaiveBayes')
+
+Test Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.94      0.73      0.82        62
+         ben       0.95      0.96      0.95        90
+         eng       1.00      0.94      0.97        90
+         guj       1.00      0.97      0.99       146
+         hin       1.00      0.96      0.98        94
+         mal       0.76      1.00      0.87       197
+         ori       1.00      0.97      0.99        73
+         pan       1.00      0.96      0.98       102
+         tam       1.00      0.90      0.95       108
+         tel       0.99      0.94      0.97       210
+         urd       1.00      0.89      0.94        73
+
+    accuracy                           0.94      1245
+   macro avg       0.97      0.93      0.94      1245
+weighted avg       0.95      0.94      0.94      1245
+
+
+Dev Set Classification Report:
+              precision    recall  f1-score   support
+
+         asm       0.95      0.69      0.80        61
+         ben       0.96      0.96      0.96        89
+         eng       0.99      0.98      0.98        90
+         guj       1.00      0.92      0.96       145
+         hin       1.00      0.92      0.96        93
+         mal       0.71      1.00      0.83       196
+         ori       1.00      0.96      0.98        72
+         pan       1.00      0.92      0.96       102
+         tam       1.00      0.91      0.95       107
+         tel       1.00      0.93      0.97       209
+         urd       1.00      0.89      0.94        72
+
+    accuracy                           0.93      1236
+   macro avg       0.96      0.92      0.94      1236
+weighted avg       0.95      0.93      0.93      1236
+
+Evaluation completed for all classifier combinations!
+PS C:\Users\yashi\OneDrive\Desktop\ML project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

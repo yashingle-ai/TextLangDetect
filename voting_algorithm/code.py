@@ -7,6 +7,7 @@ from sklearn.linear_model import LogisticRegression, SGDClassifier
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, VotingClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import LabelEncoder
@@ -39,7 +40,7 @@ test_sentences, test_labels = load_data(test_sentence_file, test_label_file)
 
 # Initialize Label Encoder and TF-IDF Vectorizer
 label_encoder = LabelEncoder()
-tfidf_vectorizer = TfidfVectorizer(ngram_range=(1, 2))  # Using bigrams for better feature extraction
+tfidf_vectorizer = TfidfVectorizer(ngram_range=(1, 2))  # Using bigrams
 
 # Transform data
 X_train = tfidf_vectorizer.fit_transform(train_sentences)
@@ -51,27 +52,42 @@ y_test = label_encoder.transform(test_labels)
 X_dev = tfidf_vectorizer.transform(dev_sentences)
 y_dev = label_encoder.transform(dev_labels)
 
-# Define classifiers with your specified hyperparameters
-classifiers = {
-    "SVM": SVC(probability=True, C=1, kernel='rbf'),
-    "KNN": KNeighborsClassifier(n_neighbors=1),  # Choosing smallest value from [1,3,5,7]
-    "RandomForest": RandomForestClassifier(n_estimators=100, min_samples_split=2, min_samples_leaf=2, max_depth=None, criterion='gini'),
-    "LogisticRegression": LogisticRegression(C=1),  # Default value from [0.1,1,10]
-    "SGD": SGDClassifier(penalty='l2', learning_rate='optimal', l1_ratio=np.float64(1.0), eta0=np.float64(0.03162277660168379), alpha=np.float64(0.0001)),
-    "AdaBoost": AdaBoostClassifier(n_estimators=50),  # Choosing first value from [50,100]
-    "DecisionTree": DecisionTreeClassifier(max_depth=10),  # Selecting a value from [5,10,20,None]
-    "NaiveBayes": MultinomialNB(alpha=0.001)
+# Define classifiers with hyperparameter grids
+param_grids = {
+    "SVM": (SVC(probability=True), {'C': [0.1, 1, 10], 'kernel': ['linear', 'rbf']}),  # Ensure probability=True
+    "KNN": (KNeighborsClassifier(), {'n_neighbors': [1, 3, 5, 7]}),
+    "RandomForest": (RandomForestClassifier(), {'n_estimators': [100, 200], 'min_samples_split': [2, 5], 'min_samples_leaf': [1, 2], 'max_depth': [None, 10]}),
+    "LogisticRegression": (LogisticRegression(), {'C': [0.1, 1, 10]}),
+    "SGD": (SGDClassifier(loss='log_loss'), {'penalty': ['l2', 'elasticnet'], 'alpha': [0.0001, 0.001], 'learning_rate': ['optimal'], 'eta0': [0.01, 0.03]}),  # Fixed loss
+    "AdaBoost": (AdaBoostClassifier(), {'n_estimators': [50, 100]}),
+    "DecisionTree": (DecisionTreeClassifier(), {'max_depth': [5, 10, 20, None]}),
+    "NaiveBayes": (MultinomialNB(), {'alpha': [0.001, 0.01, 0.1, 1]})
 }
 
+# Perform GridSearchCV for each classifier
+best_classifiers = {}
+for name, (clf, params) in param_grids.items():
+    print(f"Hyperparameter tuning for {name}...")
+    grid_search = GridSearchCV(clf, params, cv=5, scoring='accuracy', n_jobs=-1)
+    grid_search.fit(X_train, y_train)
+    best_classifiers[name] = grid_search.best_estimator_
+    print(f"Best Parameters for {name}: {grid_search.best_params_}\n")
+
 # Generate all possible 3-classifier combinations
-combinations = list(itertools.combinations(classifiers.keys(), 3))
+combinations = list(itertools.combinations(best_classifiers.keys(), 3))
 
 # Evaluate each ensemble combination
 for combo in combinations:
     print(f"\nEvaluating combination: {combo}")
+
+    selected_models = [(name, best_classifiers[name]) for name in combo]
     
-    selected_models = [(name, classifiers[name]) for name in combo]
-    ensemble = VotingClassifier(estimators=selected_models, voting='soft')
+    # Check if all classifiers in the combination support predict_proba()
+    if all(hasattr(best_classifiers[name], "predict_proba") for name in combo):
+        ensemble = VotingClassifier(estimators=selected_models, voting='soft')  # Soft Voting needs predict_proba()
+    else:
+        ensemble = VotingClassifier(estimators=selected_models, voting='hard')  # Hard Voting for non-probabilistic models
+
     ensemble.fit(X_train, y_train)
 
     # Predict on test set

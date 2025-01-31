@@ -1,0 +1,17 @@
+for all 5 combination of algorithms 
+
+
+Hyperparameter tuning for SVM...
+Best Parameters for SVM: {'C': 10, 'kernel': 'rbf'}
+
+Hyperparameter tuning for KNN...
+Best Parameters for KNN: {'n_neighbors': 1}
+
+Hyperparameter tuning for RandomForest...
+Best Parameters for RandomForest: {'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+
+Hyperparameter tuning for LogisticRegression...
+Best Parameters for LogisticRegression: {'C': 10}
+
+Hyperparameter tuning for SGD...
+Best Parameters for SGD: {'alpha': 0.0001, 'eta0': 0.03, 'learning_rate': 'optimal', 'penalty': 'l2'}

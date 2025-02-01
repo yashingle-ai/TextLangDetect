@@ -2006,7 +2006,6 @@ weighted avg       0.99      0.99      0.99      1236
 
 
 Evaluating combination: ('KNN', 'LogisticRegression', 'SGD', 'AdaBoost', 'NaiveBayes')
-Evaluating combination: ('KNN', 'LogisticRegression', 'SGD', 'AdaBoost', 'NaiveBayes')
 
 Test Set Classification Report:
               precision    recall  f1-score   support

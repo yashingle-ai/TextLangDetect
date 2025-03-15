@@ -1,0 +1,274 @@
+PS C:\Users\yashi\OneDrive\Desktop\fasttext> python -u "c:\Users\yashi\OneDrive\Desktop\fasttext\code\hyper_parameter_tuning.py"
+🔹 Training model with lr=0.1, epoch=10, wordNgrams=1, minCount=1
+✅ Validation Accuracy: 93.09%
+
+🔹 Training model with lr=0.1, epoch=10, wordNgrams=1, minCount=2
+✅ Validation Accuracy: 90.65%
+
+🔹 Training model with lr=0.1, epoch=10, wordNgrams=1, minCount=5
+✅ Validation Accuracy: 85.47%
+
+🔹 Training model with lr=0.1, epoch=10, wordNgrams=2, minCount=1
+✅ Validation Accuracy: 87.73%
+
+🔹 Training model with lr=0.1, epoch=10, wordNgrams=2, minCount=2
+✅ Validation Accuracy: 90.48%
+
+🔹 Training model with lr=0.1, epoch=10, wordNgrams=2, minCount=5
+✅ Validation Accuracy: 87.57%
+
+🔹 Training model with lr=0.1, epoch=10, wordNgrams=3, minCount=1
+✅ Validation Accuracy: 80.90%
+
+🔹 Training model with lr=0.1, epoch=10, wordNgrams=3, minCount=2
+✅ Validation Accuracy: 81.48%
+
+🔹 Training model with lr=0.1, epoch=10, wordNgrams=3, minCount=5
+✅ Validation Accuracy: 80.61%
+
+🔹 Training model with lr=0.1, epoch=25, wordNgrams=1, minCount=1
+✅ Validation Accuracy: 93.68%
+
+🔹 Training model with lr=0.1, epoch=25, wordNgrams=1, minCount=2
+✅ Validation Accuracy: 90.92%
+
+🔹 Training model with lr=0.1, epoch=25, wordNgrams=1, minCount=5
+✅ Validation Accuracy: 85.38%
+
+🔹 Training model with lr=0.1, epoch=25, wordNgrams=2, minCount=1
+✅ Validation Accuracy: 93.92%
+
+🔹 Training model with lr=0.1, epoch=25, wordNgrams=2, minCount=2
+✅ Validation Accuracy: 93.21%
+
+🔹 Training model with lr=0.1, epoch=25, wordNgrams=2, minCount=5
+✅ Validation Accuracy: 90.70%
+
+🔹 Training model with lr=0.1, epoch=25, wordNgrams=3, minCount=1
+✅ Validation Accuracy: 92.94%
+
+🔹 Training model with lr=0.1, epoch=25, wordNgrams=3, minCount=2
+✅ Validation Accuracy: 92.08%
+
+🔹 Training model with lr=0.1, epoch=25, wordNgrams=3, minCount=5
+✅ Validation Accuracy: 89.54%
+
+🔹 Training model with lr=0.1, epoch=50, wordNgrams=1, minCount=1
+✅ Validation Accuracy: 93.70%
+
+🔹 Training model with lr=0.1, epoch=50, wordNgrams=1, minCount=2
+✅ Validation Accuracy: 90.75%
+
+🔹 Training model with lr=0.1, epoch=50, wordNgrams=1, minCount=5
+✅ Validation Accuracy: 85.42%
+
+🔹 Training model with lr=0.1, epoch=50, wordNgrams=2, minCount=1
+✅ Validation Accuracy: 94.65%
+
+🔹 Training model with lr=0.1, epoch=50, wordNgrams=2, minCount=2
+✅ Validation Accuracy: 93.56%
+
+🔹 Training model with lr=0.1, epoch=50, wordNgrams=2, minCount=5
+✅ Validation Accuracy: 91.15%
+
+🔹 Training model with lr=0.1, epoch=50, wordNgrams=3, minCount=1
+✅ Validation Accuracy: 93.91%
+
+🔹 Training model with lr=0.1, epoch=50, wordNgrams=3, minCount=2
+✅ Validation Accuracy: 92.98%
+
+🔹 Training model with lr=0.1, epoch=50, wordNgrams=3, minCount=5
+✅ Validation Accuracy: 90.39%
+
+🔹 Training model with lr=0.3, epoch=10, wordNgrams=1, minCount=1
+✅ Validation Accuracy: 93.21%
+
+🔹 Training model with lr=0.3, epoch=10, wordNgrams=1, minCount=2
+✅ Validation Accuracy: 90.76%
+
+🔹 Training model with lr=0.3, epoch=10, wordNgrams=1, minCount=5
+✅ Validation Accuracy: 85.45%
+
+🔹 Training model with lr=0.3, epoch=10, wordNgrams=2, minCount=1
+✅ Validation Accuracy: 93.96%
+
+🔹 Training model with lr=0.3, epoch=10, wordNgrams=2, minCount=2
+✅ Validation Accuracy: 93.00%
+
+🔹 Training model with lr=0.3, epoch=10, wordNgrams=2, minCount=5
+✅ Validation Accuracy: 90.71%
+
+🔹 Training model with lr=0.3, epoch=10, wordNgrams=3, minCount=1
+✅ Validation Accuracy: 93.76%
+
+🔹 Training model with lr=0.3, epoch=10, wordNgrams=3, minCount=2
+✅ Validation Accuracy: 92.76%
+
+🔹 Training model with lr=0.3, epoch=10, wordNgrams=3, minCount=5
+✅ Validation Accuracy: 89.86%
+
+🔹 Training model with lr=0.3, epoch=25, wordNgrams=1, minCount=1
+✅ Validation Accuracy: 93.67%
+
+🔹 Training model with lr=0.3, epoch=25, wordNgrams=1, minCount=2
+✅ Validation Accuracy: 90.99%
+
+🔹 Training model with lr=0.3, epoch=25, wordNgrams=1, minCount=5
+✅ Validation Accuracy: 85.44%
+
+🔹 Training model with lr=0.3, epoch=25, wordNgrams=2, minCount=1
+✅ Validation Accuracy: 94.92%
+
+🔹 Training model with lr=0.3, epoch=25, wordNgrams=2, minCount=2
+✅ Validation Accuracy: 93.64%
+
+🔹 Training model with lr=0.3, epoch=25, wordNgrams=2, minCount=5
+✅ Validation Accuracy: 91.28%
+
+🔹 Training model with lr=0.3, epoch=25, wordNgrams=3, minCount=1
+✅ Validation Accuracy: 94.55%
+
+🔹 Training model with lr=0.3, epoch=25, wordNgrams=3, minCount=2
+✅ Validation Accuracy: 93.20%
+
+🔹 Training model with lr=0.3, epoch=25, wordNgrams=3, minCount=5
+✅ Validation Accuracy: 90.93%
+
+🔹 Training model with lr=0.3, epoch=50, wordNgrams=1, minCount=1
+✅ Validation Accuracy: 93.61%
+
+🔹 Training model with lr=0.3, epoch=50, wordNgrams=1, minCount=2
+✅ Validation Accuracy: 90.68%
+
+🔹 Training model with lr=0.3, epoch=50, wordNgrams=1, minCount=5
+✅ Validation Accuracy: 85.45%
+
+🔹 Training model with lr=0.3, epoch=50, wordNgrams=2, minCount=1
+✅ Validation Accuracy: 94.77%
+
+🔹 Training model with lr=0.3, epoch=50, wordNgrams=2, minCount=2
+✅ Validation Accuracy: 93.68%
+
+🔹 Training model with lr=0.3, epoch=50, wordNgrams=2, minCount=5
+✅ Validation Accuracy: 91.40%
+
+🔹 Training model with lr=0.3, epoch=50, wordNgrams=3, minCount=1
+✅ Validation Accuracy: 94.32%
+
+🔹 Training model with lr=0.3, epoch=50, wordNgrams=3, minCount=2
+✅ Validation Accuracy: 93.18%
+
+🔹 Training model with lr=0.3, epoch=50, wordNgrams=3, minCount=5
+✅ Validation Accuracy: 90.88%
+
+🔹 Training model with lr=0.5, epoch=10, wordNgrams=1, minCount=1
+✅ Validation Accuracy: 93.29%
+
+🔹 Training model with lr=0.5, epoch=10, wordNgrams=1, minCount=2
+✅ Validation Accuracy: 90.70%
+
+🔹 Training model with lr=0.5, epoch=10, wordNgrams=1, minCount=5
+✅ Validation Accuracy: 85.38%
+
+🔹 Training model with lr=0.5, epoch=10, wordNgrams=2, minCount=1
+✅ Validation Accuracy: 94.29%
+
+🔹 Training model with lr=0.5, epoch=10, wordNgrams=2, minCount=2
+✅ Validation Accuracy: 93.18%
+
+🔹 Training model with lr=0.5, epoch=10, wordNgrams=2, minCount=5
+✅ Validation Accuracy: 90.75%
+
+🔹 Training model with lr=0.5, epoch=10, wordNgrams=3, minCount=1
+✅ Validation Accuracy: 94.05%
+
+🔹 Training model with lr=0.5, epoch=10, wordNgrams=3, minCount=2
+✅ Validation Accuracy: 92.78%
+
+🔹 Training model with lr=0.5, epoch=10, wordNgrams=3, minCount=5
+✅ Validation Accuracy: 90.59%
+
+🔹 Training model with lr=0.5, epoch=25, wordNgrams=1, minCount=1
+✅ Validation Accuracy: 93.81%
+
+🔹 Training model with lr=0.5, epoch=25, wordNgrams=1, minCount=2
+✅ Validation Accuracy: 90.75%
+
+🔹 Training model with lr=0.5, epoch=25, wordNgrams=1, minCount=5
+✅ Validation Accuracy: 85.33%
+
+🔹 Training model with lr=0.5, epoch=25, wordNgrams=2, minCount=1
+✅ Validation Accuracy: 94.51%
+
+🔹 Training model with lr=0.5, epoch=25, wordNgrams=2, minCount=2
+✅ Validation Accuracy: 93.63%
+
+🔹 Training model with lr=0.5, epoch=25, wordNgrams=2, minCount=5
+✅ Validation Accuracy: 91.65%
+
+🔹 Training model with lr=0.5, epoch=25, wordNgrams=3, minCount=1
+✅ Validation Accuracy: 94.55%
+
+🔹 Training model with lr=0.5, epoch=25, wordNgrams=3, minCount=2
+✅ Validation Accuracy: 93.12%
+
+🔹 Training model with lr=0.5, epoch=25, wordNgrams=3, minCount=5
+✅ Validation Accuracy: 91.16%
+
+🔹 Training model with lr=0.5, epoch=50, wordNgrams=1, minCount=1
+✅ Validation Accuracy: 93.55%
+
+🔹 Training model with lr=0.5, epoch=50, wordNgrams=1, minCount=2
+✅ Validation Accuracy: 90.80%
+
+🔹 Training model with lr=0.5, epoch=50, wordNgrams=1, minCount=5
+✅ Validation Accuracy: 85.43%
+
+🔹 Training model with lr=0.5, epoch=50, wordNgrams=2, minCount=1
+✅ Validation Accuracy: 94.58%
+
+🔹 Training model with lr=0.5, epoch=50, wordNgrams=2, minCount=2
+✅ Validation Accuracy: 93.66%
+
+🔹 Training model with lr=0.5, epoch=50, wordNgrams=2, minCount=5
+✅ Validation Accuracy: 91.56%
+
+🔹 Training model with lr=0.5, epoch=50, wordNgrams=3, minCount=1
+✅ Validation Accuracy: 94.35%
+
+🔹 Training model with lr=0.5, epoch=50, wordNgrams=3, minCount=2
+✅ Validation Accuracy: 93.40%
+
+🔹 Training model with lr=0.5, epoch=50, wordNgrams=3, minCount=5
+✅ Validation Accuracy: 91.04%
+
+🏆 Best Model Saved: fasttext_best_model_final.bin
+📌 Best Hyperparameters: lr=0.3, epoch=25, wordNgrams=2, minCount=1
+✅ Best Validation Accuracy: 94.92%
+
+🔹 Per-Label Accuracy Report:
+           Label  Train Accuracy (%)  Validation Accuracy (%)  Test Accuracy (%)
+0   _label_asm           97.329152                93.374558          92.956522
+1   _label_ben           98.890033                97.447584          95.989061
+2   _label_brx           94.351564                91.059908          90.074906
+3   _label_doi           93.555317                91.000000          89.982578
+4   _label_eng           99.634065                98.926174          98.788694
+5   _label_gom           95.375785                90.265487          88.086957
+6   _label_guj           99.171612                98.891129          98.540146
+7   _label_hin           99.229948                98.469158          98.093910
+8   _label_kan           97.452438                94.308943          93.656093
+9   _label_kas           97.264178                93.060910          93.851852
+10  _label_mai           89.369795                84.928027          82.441472
+11  _label_mal           95.499738                87.704918          88.085540
+12  _label_mar           96.847978                91.722595          94.297782
+13  _label_mni           99.083552                96.930233          97.012302
+14  _label_npi           92.145422                84.986831          87.970615
+15  _label_ory           99.688551                99.694501          99.596367
+16  _label_pan           98.305085                95.557963          96.048299
+17  _label_sat           99.470963                98.282443          98.971001
+18  _label_snd           93.627848                90.722656          90.900735
+19  _label_tam           97.157726                91.618735          91.505467
+20  _label_tel           99.064926                97.949219          97.296752
+21  _label_urd           99.375618                98.672114          98.582996
+
+✅ Report saved to 'fasttext_per_label_accuracy.csv'.

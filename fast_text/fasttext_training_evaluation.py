@@ -1,3 +1,21 @@
+# ------------------------- FUNCTION EXPLANATION ------------------------- #
+"""
+Function: evaluate_per_label(model, file_path)
+Purpose: Computes the accuracy of the FastText model for each label.
+
+Parameters:
+    - model: Trained FastText model
+    - file_path: Path to the labeled dataset (train, validation, or test)
+
+Returns:
+    - total_samples: Total number of samples in the dataset
+    - label_accuracy: Dictionary containing accuracy for each label
+
+Usage Example:
+    total_samples, accuracy_report = evaluate_per_label(model, "fasttext_test.txt")
+"""
+# ------------------------------------------------------------------------ #
+
 import argparse
 import fasttext
 import os

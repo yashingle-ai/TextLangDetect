@@ -1,30 +1,22 @@
+import argparse
 import fasttext
 import os
 import pandas as pd
 from collections import defaultdict
 
-# Define file paths
-train_file = "C:\\Users\\yashi\\OneDrive\\Desktop\\fasttext\\label data\\fasttext_train.txt"
-valid_file = "C:\\Users\\yashi\\OneDrive\\Desktop\\fasttext\\label data\\fasttext_valid.txt"
-test_file = "C:\\Users\\yashi\\OneDrive\\Desktop\\fasttext\\label data\\fasttext_test.txt"
-
-# Train FastText model
-model = fasttext.train_supervised(
-    input=train_file, 
-    epoch=25,        
-    lr=0.5,          
-    wordNgrams=2,    
-    verbose=2,       
-    minCount=1       
-)
-
-# Save the trained model
-model_path = "fasttext_lang_identifier.bin"
-model.save_model(model_path)
-print(f"✅ Model training complete. Saved as '{model_path}'.")
-
-# Load the trained model
-model = fasttext.load_model(model_path)
+# Function to train FastText model
+def train_model(train_file, model_path):
+    model = fasttext.train_supervised(
+        input=train_file, 
+        epoch=25,        
+        lr=0.5,          
+        wordNgrams=2,    
+        verbose=2,       
+        minCount=1       
+    )
+    model.save_model(model_path)
+    print(f"\u2705 Model training complete. Saved as '{model_path}'.")
+    return model
 
 # Function to compute per-label accuracy
 def evaluate_per_label(model, file_path):
@@ -61,31 +53,45 @@ def evaluate_per_label(model, file_path):
     
     return total_samples, label_accuracy
 
-# Evaluate on train, validation, and test sets
-train_samples, train_acc = evaluate_per_label(model, train_file)
-valid_samples, valid_acc = evaluate_per_label(model, valid_file)
-test_samples, test_acc = evaluate_per_label(model, test_file)
-
-# Create a summary report
-labels = sorted(set(train_acc.keys()) | set(valid_acc.keys()) | set(test_acc.keys()))
-
-report = []
-for label in labels:
-    report.append({
-        "Label": label,
-        "Train Accuracy (%)": train_acc.get(label, 0),
-        "Validation Accuracy (%)": valid_acc.get(label, 0),
-        "Test Accuracy (%)": test_acc.get(label, 0),
-    })
-
-# Convert to DataFrame
-df = pd.DataFrame(report)
-
-# Display the report
-print("\n🔹 Per-Label Accuracy Report:")
-print(df)
-
-# Save to CSV
-csv_path = "fasttext_per_label_accuracy.csv"
-df.to_csv(csv_path, index=False)
-print(f"\n✅ Report saved to '{csv_path}'.")
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Train a FastText language identification model and evaluate it.")
+    parser.add_argument("--train_file", type=str, required=True, help="Path to the training dataset.")
+    parser.add_argument("--valid_file", type=str, required=True, help="Path to the validation dataset.")
+    parser.add_argument("--test_file", type=str, required=True, help="Path to the test dataset.")
+    parser.add_argument("--model_path", type=str, default="fasttext_lang_identifier.bin", help="Path to save the trained model.")
+    parser.add_argument("--output_csv", type=str, default="fasttext_per_label_accuracy.csv", help="Path to save the accuracy report.")
+    
+    args = parser.parse_args()
+    
+    # Train the model
+    model = train_model(args.train_file, args.model_path)
+    
+    # Load trained model
+    model = fasttext.load_model(args.model_path)
+    
+    # Evaluate on train, validation, and test sets
+    train_samples, train_acc = evaluate_per_label(model, args.train_file)
+    valid_samples, valid_acc = evaluate_per_label(model, args.valid_file)
+    test_samples, test_acc = evaluate_per_label(model, args.test_file)
+    
+    # Create a summary report
+    labels = sorted(set(train_acc.keys()) | set(valid_acc.keys()) | set(test_acc.keys()))
+    report = []
+    for label in labels:
+        report.append({
+            "Label": label,
+            "Train Accuracy (%)": train_acc.get(label, 0),
+            "Validation Accuracy (%)": valid_acc.get(label, 0),
+            "Test Accuracy (%)": test_acc.get(label, 0),
+        })
+    
+    # Convert to DataFrame
+    df = pd.DataFrame(report)
+    
+    # Display the report
+    print("\n\U0001F539 Per-Label Accuracy Report:")
+    print(df)
+    
+    # Save to CSV
+    df.to_csv(args.output_csv, index=False)
+    print(f"\n\u2705 Report saved to '{args.output_csv}'.")

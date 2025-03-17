@@ -50,7 +50,7 @@ def evaluate_per_label(model, file_path):
         if len(parts) < 2:
             continue
         
-        true_label = parts[0]  # First word is the label (e.g., __label__english)
+        true_label = parts[0]  # First word is the label (example:- __label__english)
         text = " ".join(parts[1:])  # Remaining is the sentence
         
         # Predict label

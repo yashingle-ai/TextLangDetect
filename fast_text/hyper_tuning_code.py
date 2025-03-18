@@ -1,23 +1,46 @@
 import fasttext
 import os
 import pandas as pd
+import random
 from collections import defaultdict
 from itertools import product
 
 # Define file paths
-train_file = "C:\\Users\\yashi\\OneDrive\\Desktop\\fasttext\\label data\\fasttext_train.txt"
-valid_file = "C:\\Users\\yashi\\OneDrive\\Desktop\\fasttext\\label data\\fasttext_valid.txt"
-test_file = "C:\\Users\\yashi\\OneDrive\\Desktop\\fasttext\\label data\\fasttext_test.txt"
+train_file = "C:\\Users\\yashi\\OneDrive\\Desktop\\fasttext\\label_data_10k\\train.txt"
+valid_file = "C:\\Users\\yashi\\OneDrive\\Desktop\\fasttext\\label_data_10k\\valid.txt"
+test_file = "C:\\Users\\yashi\\OneDrive\\Desktop\\fasttext\\label_data_10k\\test.txt"
 
 # Hyperparameter grid
 param_grid = {
-    "lr": [0.1, 0.3, 0.5],        # Learning rate
-    "epoch": [10, 25, 50],        # Number of iterations
-    "wordNgrams": [1, 2, 3],      # N-grams for context
-    "minCount": [1, 2, 5]         # Minimum word frequency
+    "lr": [0.05, 0.1, 0.3],      # Reduced max learning rate for stability
+    "epoch": [10, 25, 50],       
+    "wordNgrams": [1, 2, 3],     
+    "minCount": [1, 2, 5]        
 }
 
-# Function to evaluate model on validation data
+# Function to clean data (removes empty or corrupted lines)
+def clean_data(file_path, output_path):
+    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+        lines = f.readlines()
+    
+    cleaned_lines = [line for line in lines if line.strip() and line.startswith("__label__")]
+    
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.writelines(cleaned_lines)
+
+    print(f" Cleaned data saved to {output_path}")
+
+# Clean datasets before training
+clean_data(train_file, "clean_train.txt")
+clean_data(valid_file, "clean_valid.txt")
+clean_data(test_file, "clean_test.txt")
+
+# Update paths to cleaned files
+train_file = "clean_train.txt"
+valid_file = "clean_valid.txt"
+test_file = "clean_test.txt"
+
+# Function to evaluate model
 def evaluate_model(model, file_path):
     result = model.test(file_path)
     return result[1]  # Validation accuracy
@@ -30,15 +53,20 @@ best_params = None
 for lr, epoch, wordNgrams, minCount in product(param_grid["lr"], param_grid["epoch"], param_grid["wordNgrams"], param_grid["minCount"]):
     print(f"🔹 Training model with lr={lr}, epoch={epoch}, wordNgrams={wordNgrams}, minCount={minCount}")
     
-    model = fasttext.train_supervised(
-        input=train_file, 
-        lr=lr,
-        epoch=epoch,
-        wordNgrams=wordNgrams,
-        minCount=minCount,
-        verbose=0  # Reduce console output
-    )
-    
+    try:
+        model = fasttext.train_supervised(
+            input=train_file, 
+            lr=lr,
+            epoch=epoch,
+            wordNgrams=wordNgrams,
+            minCount=minCount,
+            loss="softmax",  # Use softmax loss for better classification
+            verbose=0
+        )
+    except RuntimeError as e:
+        print(f" Training failed for lr={lr}, epoch={epoch}, wordNgrams={wordNgrams}, minCount={minCount}. Error: {e}")
+        continue
+
     val_accuracy = evaluate_model(model, valid_file)
     print(f" Validation Accuracy: {val_accuracy * 100:.2f}%\n")
     
@@ -50,9 +78,9 @@ for lr, epoch, wordNgrams, minCount in product(param_grid["lr"], param_grid["epo
 # Save the best model
 best_model_path = "fasttext_best_model_final.bin"
 best_model.save_model(best_model_path)
-print(f" Best Model Saved: {best_model_path}")
-print(f" Best Hyperparameters: lr={best_params[0]}, epoch={best_params[1]}, wordNgrams={best_params[2]}, minCount={best_params[3]}")
-print(f" Best Validation Accuracy: {best_accuracy * 100:.2f}%")
+print(f"🎯 Best Model Saved: {best_model_path}")
+print(f"🏆 Best Hyperparameters: lr={best_params[0]}, epoch={best_params[1]}, wordNgrams={best_params[2]}, minCount={best_params[3]}")
+print(f"🔥 Best Validation Accuracy: {best_accuracy * 100:.2f}%")
 
 # Function to compute per-label accuracy
 def evaluate_per_label(model, file_path):
@@ -116,4 +144,4 @@ print(df)
 # Save to CSV
 csv_path = "fasttext_per_label_accuracy.csv"
 df.to_csv(csv_path, index=False)
-print(f"\n Report saved to '{csv_path}'.")
+print(f"\nReport saved to '{csv_path}'.")

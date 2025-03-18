@@ -1,251 +1,251 @@
-🔹 Training model with lr=0.05, epoch=10, wordNgrams=1, minCount=1
-✅ Validation Accuracy: 93.69%
+ Training model with lr=0.05, epoch=10, wordNgrams=1, minCount=1
+ Validation Accuracy: 93.69%
 
-🔹 Training model with lr=0.05, epoch=10, wordNgrams=1, minCount=2
-✅ Validation Accuracy: 92.47%
+ Training model with lr=0.05, epoch=10, wordNgrams=1, minCount=2
+ Validation Accuracy: 92.47%
 
-🔹 Training model with lr=0.05, epoch=10, wordNgrams=1, minCount=5
-✅ Validation Accuracy: 89.03%
+ Training model with lr=0.05, epoch=10, wordNgrams=1, minCount=5
+ Validation Accuracy: 89.03%
 
-🔹 Training model with lr=0.05, epoch=10, wordNgrams=2, minCount=1
-✅ Validation Accuracy: 91.77%
+ Training model with lr=0.05, epoch=10, wordNgrams=2, minCount=1
+ Validation Accuracy: 91.77%
 
-🔹 Training model with lr=0.05, epoch=10, wordNgrams=2, minCount=2
-✅ Validation Accuracy: 92.05%
+ Training model with lr=0.05, epoch=10, wordNgrams=2, minCount=2
+ Validation Accuracy: 92.05%
 
-🔹 Training model with lr=0.05, epoch=10, wordNgrams=2, minCount=5
-✅ Validation Accuracy: 91.10%
+ Training model with lr=0.05, epoch=10, wordNgrams=2, minCount=5
+ Validation Accuracy: 91.10%
 
-🔹 Training model with lr=0.05, epoch=10, wordNgrams=3, minCount=1
-✅ Validation Accuracy: 84.65%
+ Training model with lr=0.05, epoch=10, wordNgrams=3, minCount=1
+ Validation Accuracy: 84.65%
 
-🔹 Training model with lr=0.05, epoch=10, wordNgrams=3, minCount=2
-✅ Validation Accuracy: 86.86%
+ Training model with lr=0.05, epoch=10, wordNgrams=3, minCount=2
+ Validation Accuracy: 86.86%
 
-🔹 Training model with lr=0.05, epoch=10, wordNgrams=3, minCount=5
-✅ Validation Accuracy: 85.97%
+ Training model with lr=0.05, epoch=10, wordNgrams=3, minCount=5
+ Validation Accuracy: 85.97%
 
-🔹 Training model with lr=0.05, epoch=25, wordNgrams=1, minCount=1
-✅ Validation Accuracy: 93.95%
+ Training model with lr=0.05, epoch=25, wordNgrams=1, minCount=1
+ Validation Accuracy: 93.95%
 
-🔹 Training model with lr=0.05, epoch=25, wordNgrams=1, minCount=2
-✅ Validation Accuracy: 92.83%
+ Training model with lr=0.05, epoch=25, wordNgrams=1, minCount=2
+ Validation Accuracy: 92.83%
 
-🔹 Training model with lr=0.05, epoch=25, wordNgrams=1, minCount=5
-✅ Validation Accuracy: 88.89%
+ Training model with lr=0.05, epoch=25, wordNgrams=1, minCount=5
+ Validation Accuracy: 88.89%
 
-🔹 Training model with lr=0.05, epoch=25, wordNgrams=2, minCount=1
-✅ Validation Accuracy: 93.81%
+ Training model with lr=0.05, epoch=25, wordNgrams=2, minCount=1
+ Validation Accuracy: 93.81%
 
-🔹 Training model with lr=0.05, epoch=25, wordNgrams=2, minCount=2
-✅ Validation Accuracy: 93.64%
+ Training model with lr=0.05, epoch=25, wordNgrams=2, minCount=2
+ Validation Accuracy: 93.64%
 
-🔹 Training model with lr=0.05, epoch=25, wordNgrams=2, minCount=5
-✅ Validation Accuracy: 92.58%
+ Training model with lr=0.05, epoch=25, wordNgrams=2, minCount=5
+ Validation Accuracy: 92.58%
 
-🔹 Training model with lr=0.05, epoch=25, wordNgrams=3, minCount=1
-✅ Validation Accuracy: 93.05%
+ Training model with lr=0.05, epoch=25, wordNgrams=3, minCount=1
+ Validation Accuracy: 93.05%
 
-🔹 Training model with lr=0.05, epoch=25, wordNgrams=3, minCount=2
-✅ Validation Accuracy: 92.91%
+ Training model with lr=0.05, epoch=25, wordNgrams=3, minCount=2
+ Validation Accuracy: 92.91%
 
-🔹 Training model with lr=0.05, epoch=25, wordNgrams=3, minCount=5
-✅ Validation Accuracy: 91.69%
+ Training model with lr=0.05, epoch=25, wordNgrams=3, minCount=5
+ Validation Accuracy: 91.69%
 
-🔹 Training model with lr=0.05, epoch=50, wordNgrams=1, minCount=1
-✅ Validation Accuracy: 93.78%
+ Training model with lr=0.05, epoch=50, wordNgrams=1, minCount=1
+ Validation Accuracy: 93.78%
 
-🔹 Training model with lr=0.05, epoch=50, wordNgrams=1, minCount=2
-✅ Validation Accuracy: 92.49%
+ Training model with lr=0.05, epoch=50, wordNgrams=1, minCount=2
+ Validation Accuracy: 92.49%
 
-🔹 Training model with lr=0.05, epoch=50, wordNgrams=1, minCount=5
-✅ Validation Accuracy: 88.42%
+ Training model with lr=0.05, epoch=50, wordNgrams=1, minCount=5
+ Validation Accuracy: 88.42%
 
-🔹 Training model with lr=0.05, epoch=50, wordNgrams=2, minCount=1
-✅ Validation Accuracy: 94.17%
+ Training model with lr=0.05, epoch=50, wordNgrams=2, minCount=1
+ Validation Accuracy: 94.17%
 
-🔹 Training model with lr=0.05, epoch=50, wordNgrams=2, minCount=2
-✅ Validation Accuracy: 93.86%
+ Training model with lr=0.05, epoch=50, wordNgrams=2, minCount=2
+ Validation Accuracy: 93.86%
 
-🔹 Training model with lr=0.05, epoch=50, wordNgrams=2, minCount=5
-✅ Validation Accuracy: 92.47%
+ Training model with lr=0.05, epoch=50, wordNgrams=2, minCount=5
+ Validation Accuracy: 92.47%
 
-🔹 Training model with lr=0.05, epoch=50, wordNgrams=3, minCount=1
-✅ Validation Accuracy: 93.69%
+ Training model with lr=0.05, epoch=50, wordNgrams=3, minCount=1
+ Validation Accuracy: 93.69%
 
-🔹 Training model with lr=0.05, epoch=50, wordNgrams=3, minCount=2
-✅ Validation Accuracy: 93.36%
+ Training model with lr=0.05, epoch=50, wordNgrams=3, minCount=2
+ Validation Accuracy: 93.36%
 
-🔹 Training model with lr=0.05, epoch=50, wordNgrams=3, minCount=5
-✅ Validation Accuracy: 91.94%
+ Training model with lr=0.05, epoch=50, wordNgrams=3, minCount=5
+ Validation Accuracy: 91.94%
 
-🔹 Training model with lr=0.1, epoch=10, wordNgrams=1, minCount=1
-✅ Validation Accuracy: 93.92%
+ Training model with lr=0.1, epoch=10, wordNgrams=1, minCount=1
+ Validation Accuracy: 93.92%
 
-🔹 Training model with lr=0.1, epoch=10, wordNgrams=1, minCount=2
-✅ Validation Accuracy: 92.49%
+ Training model with lr=0.1, epoch=10, wordNgrams=1, minCount=2
+ Validation Accuracy: 92.49%
 
-🔹 Training model with lr=0.1, epoch=10, wordNgrams=1, minCount=5
-✅ Validation Accuracy: 88.75%
+ Training model with lr=0.1, epoch=10, wordNgrams=1, minCount=5
+ Validation Accuracy: 88.75%
 
-🔹 Training model with lr=0.1, epoch=10, wordNgrams=2, minCount=1
-✅ Validation Accuracy: 94.03%
+ Training model with lr=0.1, epoch=10, wordNgrams=2, minCount=1
+ Validation Accuracy: 94.03%
 
-🔹 Training model with lr=0.1, epoch=10, wordNgrams=2, minCount=2
-✅ Validation Accuracy: 93.53%
+ Training model with lr=0.1, epoch=10, wordNgrams=2, minCount=2
+ Validation Accuracy: 93.53%
 
-🔹 Training model with lr=0.1, epoch=10, wordNgrams=2, minCount=5
-✅ Validation Accuracy: 92.38%
+ Training model with lr=0.1, epoch=10, wordNgrams=2, minCount=5
+ Validation Accuracy: 92.38%
 
-🔹 Training model with lr=0.1, epoch=10, wordNgrams=3, minCount=1
-✅ Validation Accuracy: 92.94%
+ Training model with lr=0.1, epoch=10, wordNgrams=3, minCount=1
+ Validation Accuracy: 92.94%
 
-🔹 Training model with lr=0.1, epoch=10, wordNgrams=3, minCount=2
-✅ Validation Accuracy: 92.72%
+ Training model with lr=0.1, epoch=10, wordNgrams=3, minCount=2
+ Validation Accuracy: 92.72%
 
-🔹 Training model with lr=0.1, epoch=10, wordNgrams=3, minCount=5
-✅ Validation Accuracy: 91.94%
+ Training model with lr=0.1, epoch=10, wordNgrams=3, minCount=5
+ Validation Accuracy: 91.94%
 
-🔹 Training model with lr=0.1, epoch=25, wordNgrams=1, minCount=1
-✅ Validation Accuracy: 93.78%
+ Training model with lr=0.1, epoch=25, wordNgrams=1, minCount=1
+ Validation Accuracy: 93.78%
 
-🔹 Training model with lr=0.1, epoch=25, wordNgrams=1, minCount=2
-✅ Validation Accuracy: 92.63%
+ Training model with lr=0.1, epoch=25, wordNgrams=1, minCount=2
+ Validation Accuracy: 92.63%
 
-🔹 Training model with lr=0.1, epoch=25, wordNgrams=1, minCount=5
-✅ Validation Accuracy: 88.98%
+ Training model with lr=0.1, epoch=25, wordNgrams=1, minCount=5
+ Validation Accuracy: 88.98%
 
-🔹 Training model with lr=0.1, epoch=25, wordNgrams=2, minCount=1
-✅ Validation Accuracy: 94.31%
+ Training model with lr=0.1, epoch=25, wordNgrams=2, minCount=1
+ Validation Accuracy: 94.31%
 
-🔹 Training model with lr=0.1, epoch=25, wordNgrams=2, minCount=2
-✅ Validation Accuracy: 93.81%
+ Training model with lr=0.1, epoch=25, wordNgrams=2, minCount=2
+ Validation Accuracy: 93.81%
 
-🔹 Training model with lr=0.1, epoch=25, wordNgrams=2, minCount=5
-✅ Validation Accuracy: 92.66%
+ Training model with lr=0.1, epoch=25, wordNgrams=2, minCount=5
+ Validation Accuracy: 92.66%
 
-🔹 Training model with lr=0.1, epoch=25, wordNgrams=3, minCount=1
-✅ Validation Accuracy: 94.06%
+ Training model with lr=0.1, epoch=25, wordNgrams=3, minCount=1
+ Validation Accuracy: 94.06%
 
-🔹 Training model with lr=0.1, epoch=25, wordNgrams=3, minCount=2
-✅ Validation Accuracy: 93.67%
+ Training model with lr=0.1, epoch=25, wordNgrams=3, minCount=2
+ Validation Accuracy: 93.67%
 
-🔹 Training model with lr=0.1, epoch=25, wordNgrams=3, minCount=5
-✅ Validation Accuracy: 92.44%
+ Training model with lr=0.1, epoch=25, wordNgrams=3, minCount=5
+ Validation Accuracy: 92.44%
 
-🔹 Training model with lr=0.1, epoch=50, wordNgrams=1, minCount=1
-✅ Validation Accuracy: 93.89%
+ Training model with lr=0.1, epoch=50, wordNgrams=1, minCount=1
+ Validation Accuracy: 93.89%
 
-🔹 Training model with lr=0.1, epoch=50, wordNgrams=1, minCount=2
-✅ Validation Accuracy: 92.66%
+ Training model with lr=0.1, epoch=50, wordNgrams=1, minCount=2
+ Validation Accuracy: 92.66%
 
-🔹 Training model with lr=0.1, epoch=50, wordNgrams=1, minCount=5
-✅ Validation Accuracy: 88.78%
+ Training model with lr=0.1, epoch=50, wordNgrams=1, minCount=5
+ Validation Accuracy: 88.78%
 
-🔹 Training model with lr=0.1, epoch=50, wordNgrams=2, minCount=1
-✅ Validation Accuracy: 94.22%
+ Training model with lr=0.1, epoch=50, wordNgrams=2, minCount=1
+ Validation Accuracy: 94.22%
 
-🔹 Training model with lr=0.1, epoch=50, wordNgrams=2, minCount=2
-✅ Validation Accuracy: 93.50%
+ Training model with lr=0.1, epoch=50, wordNgrams=2, minCount=2
+ Validation Accuracy: 93.50%
 
-🔹 Training model with lr=0.1, epoch=50, wordNgrams=2, minCount=5
-✅ Validation Accuracy: 92.16%
+ Training model with lr=0.1, epoch=50, wordNgrams=2, minCount=5
+ Validation Accuracy: 92.16%
 
-🔹 Training model with lr=0.1, epoch=50, wordNgrams=3, minCount=1
-✅ Validation Accuracy: 93.81%
+ Training model with lr=0.1, epoch=50, wordNgrams=3, minCount=1
+ Validation Accuracy: 93.81%
 
-🔹 Training model with lr=0.1, epoch=50, wordNgrams=3, minCount=2
-✅ Validation Accuracy: 93.36%
+ Training model with lr=0.1, epoch=50, wordNgrams=3, minCount=2
+ Validation Accuracy: 93.36%
 
-🔹 Training model with lr=0.1, epoch=50, wordNgrams=3, minCount=5
-✅ Validation Accuracy: 92.16%
+ Training model with lr=0.1, epoch=50, wordNgrams=3, minCount=5
+ Validation Accuracy: 92.16%
 
-🔹 Training model with lr=0.3, epoch=10, wordNgrams=1, minCount=1
-✅ Validation Accuracy: 94.00%
+ Training model with lr=0.3, epoch=10, wordNgrams=1, minCount=1
+ Validation Accuracy: 94.00%
 
-🔹 Training model with lr=0.3, epoch=10, wordNgrams=1, minCount=2
-✅ Validation Accuracy: 92.63%
+ Training model with lr=0.3, epoch=10, wordNgrams=1, minCount=2
+ Validation Accuracy: 92.63%
 
-🔹 Training model with lr=0.3, epoch=10, wordNgrams=1, minCount=5
-✅ Validation Accuracy: 89.03%
+ Training model with lr=0.3, epoch=10, wordNgrams=1, minCount=5
+ Validation Accuracy: 89.03%
 
-🔹 Training model with lr=0.3, epoch=10, wordNgrams=2, minCount=1
-✅ Validation Accuracy: 93.83%
+ Training model with lr=0.3, epoch=10, wordNgrams=2, minCount=1
+ Validation Accuracy: 93.83%
 
-🔹 Training model with lr=0.3, epoch=10, wordNgrams=2, minCount=2
-✅ Validation Accuracy: 93.53%
+ Training model with lr=0.3, epoch=10, wordNgrams=2, minCount=2
+ Validation Accuracy: 93.53%
 
-🔹 Training model with lr=0.3, epoch=10, wordNgrams=2, minCount=5
-✅ Validation Accuracy: 92.38%
+ Training model with lr=0.3, epoch=10, wordNgrams=2, minCount=5
+ Validation Accuracy: 92.38%
 
-🔹 Training model with lr=0.3, epoch=10, wordNgrams=3, minCount=1
-✅ Validation Accuracy: 93.64%
+ Training model with lr=0.3, epoch=10, wordNgrams=3, minCount=1
+ Validation Accuracy: 93.64%
 
-🔹 Training model with lr=0.3, epoch=10, wordNgrams=3, minCount=2
-✅ Validation Accuracy: 93.39%
+ Training model with lr=0.3, epoch=10, wordNgrams=3, minCount=2
+ Validation Accuracy: 93.39%
 
-🔹 Training model with lr=0.3, epoch=10, wordNgrams=3, minCount=5
-✅ Validation Accuracy: 91.94%
+ Training model with lr=0.3, epoch=10, wordNgrams=3, minCount=5
+ Validation Accuracy: 91.94%
 
-🔹 Training model with lr=0.3, epoch=25, wordNgrams=1, minCount=1
-✅ Validation Accuracy: 93.97%
+ Training model with lr=0.3, epoch=25, wordNgrams=1, minCount=1
+ Validation Accuracy: 93.97%
 
-🔹 Training model with lr=0.3, epoch=25, wordNgrams=1, minCount=2
-✅ Validation Accuracy: 92.83%
+ Training model with lr=0.3, epoch=25, wordNgrams=1, minCount=2
+ Validation Accuracy: 92.83%
 
-🔹 Training model with lr=0.3, epoch=25, wordNgrams=1, minCount=5
-✅ Validation Accuracy: 88.84%
+ Training model with lr=0.3, epoch=25, wordNgrams=1, minCount=5
+ Validation Accuracy: 88.84%
 
-🔹 Training model with lr=0.3, epoch=25, wordNgrams=2, minCount=1
-✅ Validation Accuracy: 93.95%
+ Training model with lr=0.3, epoch=25, wordNgrams=2, minCount=1
+ Validation Accuracy: 93.95%
 
-🔹 Training model with lr=0.3, epoch=25, wordNgrams=2, minCount=2
-✅ Validation Accuracy: 93.33%
+ Training model with lr=0.3, epoch=25, wordNgrams=2, minCount=2
+ Validation Accuracy: 93.33%
 
-🔹 Training model with lr=0.3, epoch=25, wordNgrams=2, minCount=5
-✅ Validation Accuracy: 92.27%
+ Training model with lr=0.3, epoch=25, wordNgrams=2, minCount=5
+ Validation Accuracy: 92.27%
 
-🔹 Training model with lr=0.3, epoch=25, wordNgrams=3, minCount=1
-✅ Validation Accuracy: 93.69%
+ Training model with lr=0.3, epoch=25, wordNgrams=3, minCount=1
+ Validation Accuracy: 93.69%
 
-🔹 Training model with lr=0.3, epoch=25, wordNgrams=3, minCount=2
-✅ Validation Accuracy: 93.05%
+ Training model with lr=0.3, epoch=25, wordNgrams=3, minCount=2
+ Validation Accuracy: 93.05%
 
-🔹 Training model with lr=0.3, epoch=25, wordNgrams=3, minCount=5
-✅ Validation Accuracy: 92.30%
+ Training model with lr=0.3, epoch=25, wordNgrams=3, minCount=5
+ Validation Accuracy: 92.30%
 
-🔹 Training model with lr=0.3, epoch=50, wordNgrams=1, minCount=1
-✅ Validation Accuracy: 93.81%
+ Training model with lr=0.3, epoch=50, wordNgrams=1, minCount=1
+ Validation Accuracy: 93.81%
 
-🔹 Training model with lr=0.3, epoch=50, wordNgrams=1, minCount=2
-✅ Validation Accuracy: 92.55%
+ Training model with lr=0.3, epoch=50, wordNgrams=1, minCount=2
+ Validation Accuracy: 92.55%
 
-🔹 Training model with lr=0.3, epoch=50, wordNgrams=1, minCount=5
-✅ Validation Accuracy: 88.75%
+ Training model with lr=0.3, epoch=50, wordNgrams=1, minCount=5
+ Validation Accuracy: 88.75%
 
-🔹 Training model with lr=0.3, epoch=50, wordNgrams=2, minCount=1
-✅ Validation Accuracy: 93.89%
+ Training model with lr=0.3, epoch=50, wordNgrams=2, minCount=1
+ Validation Accuracy: 93.89%
 
-🔹 Training model with lr=0.3, epoch=50, wordNgrams=2, minCount=2
-✅ Validation Accuracy: 93.36%
+ Training model with lr=0.3, epoch=50, wordNgrams=2, minCount=2
+ Validation Accuracy: 93.36%
 
-🔹 Training model with lr=0.3, epoch=50, wordNgrams=2, minCount=5
-✅ Validation Accuracy: 92.30%
+ Training model with lr=0.3, epoch=50, wordNgrams=2, minCount=5
+ Validation Accuracy: 92.30%
 
-🔹 Training model with lr=0.3, epoch=50, wordNgrams=3, minCount=1
-✅ Validation Accuracy: 93.67%
+ Training model with lr=0.3, epoch=50, wordNgrams=3, minCount=1
+ Validation Accuracy: 93.67%
 
-🔹 Training model with lr=0.3, epoch=50, wordNgrams=3, minCount=2
-✅ Validation Accuracy: 93.28%
+ Training model with lr=0.3, epoch=50, wordNgrams=3, minCount=2
+ Validation Accuracy: 93.28%
 
-🔹 Training model with lr=0.3, epoch=50, wordNgrams=3, minCount=5
-✅ Validation Accuracy: 92.05%
+ Training model with lr=0.3, epoch=50, wordNgrams=3, minCount=5
+ Validation Accuracy: 92.05%
 
 🎯 Best Model Saved: fasttext_best_model_final.bin
 🏆 Best Hyperparameters: lr=0.1, epoch=25, wordNgrams=2, minCount=1
 🔥 Best Validation Accuracy: 94.31%
 
-🔹 Per-Label Accuracy Report:
+ Per-Label Accuracy Report:
            Label  Train Accuracy (%)  Validation Accuracy (%)  Test Accuracy (%)
 0   __label__asm           98.900000                     93.8               95.2
 1   __label__ben           99.577778                     98.4               98.0

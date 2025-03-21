@@ -1,6 +1,31 @@
-Best Parameters: {'learning_rate': 1.0, 'n_estimators': 50}
+AdaBoost Text Classification Report
+Model Evaluation and Performance Analysis
 
-Test Set Classification Report:
+here we train the model based on the 1k sentence of each language .
+
+1. Introduction
+This report presents the evaluation results of an AdaBoost-based text classification model trained on TF-IDF features.
+The model was tuned using GridSearchCV to find the best hyperparameters and was evaluated on test and development datasets
+using classification metrics such as precision, recall, and F1-score.
+
+2. Best Hyperparameters Found
+The following hyperparameters were selected after performing grid search:
+
+n_estimators: 50
+learning_rate: 1.0
+3. Evaluation Metrics
+The performance of the model was assessed using different averaging techniques:
+
+Macro Averaging – Treats all classes equally
+Micro Averaging – Sums true positives, false positives, and false negatives across classes
+Weighted Averaging – Accounts for class imbalance
+
+
+The detailed classification reports for the test and development datasets are presented below.
+
+4. Test Set Classification Report
+
+
               precision    recall  f1-score   support
 
          asm       1.00      0.24      0.39        62
@@ -20,7 +45,7 @@ Test Set Classification Report:
 weighted avg       0.88      0.58      0.61      1245
 
 
-Dev Set Classification Report:
+5. Dev Set Classification Report
               precision    recall  f1-score   support
 
          asm       1.00      0.13      0.23        61
@@ -38,6 +63,7 @@ Dev Set Classification Report:
     accuracy                           0.57      1236
    macro avg       0.93      0.54      0.62      1236
 weighted avg       0.88      0.57      0.59      1236
+
 
 Evaluation Metrics (Macro, Micro, Weighted):
 

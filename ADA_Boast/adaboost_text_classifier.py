@@ -1,4 +1,31 @@
-# Import required libraries 
+"""
+AdaBoost Text Classifier with Grid Search and Evaluation
+
+This script trains an AdaBoost text classification model using TF-IDF features.
+It performs hyperparameter tuning using GridSearchCV and evaluates the model on 
+development and test datasets.
+
+### Features:
+- Loads sentence and label data from text files.
+- Converts text into TF-IDF representations.
+- Uses AdaBoost with a Decision Tree (max_depth=1) as the base estimator.
+- Performs hyperparameter tuning with GridSearchCV to find the best model.
+- Evaluates the model on test and development datasets.
+- Reports precision, recall, and F1-score with macro, micro, and weighted averaging.
+
+### How to Use:
+Run the script with the required file paths as command-line arguments:
+
+```bash
+python adaboost_text_classifier.py --train_sent "path/to/train_sentences.txt" \
+--train_label "path/to/train_labels.txt" \
+--dev_sent "path/to/dev_sentences.txt" \
+--dev_label "path/to/dev_labels.txt" \
+--test_sent "path/to/test_sentences.txt" \
+--test_label "path/to/test_labels.txt"
+"""
+
+import argparse
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
@@ -21,18 +48,20 @@ def load_data(sentence_file, label_file):
 
     return sentences, labels
 
-# File paths
-train_sentence_file = 'C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\text_suffling\\shuffle_train_sent_all.txt'
-train_label_file = 'C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\text_suffling\\shuffle_train_label_all.txt'
-dev_sentence_file = 'C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\text_suffling\\shuffle_dev_sent_all.txt'
-dev_label_file = 'C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\text_suffling\\shuffle_dev_label_all.txt'
-test_sentence_file = 'C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\text_suffling\\shuffle_test_sent_all.txt'
-test_label_file = 'C:\\Users\\yashi\\OneDrive\\Desktop\\ML project\\text_suffling\\shuffle_test_label_all.txt'
+# Argument parser
+parser = argparse.ArgumentParser(description="Train and evaluate an AdaBoost text classifier.")
+parser.add_argument("--train_sent", required=True, help="Path to training sentences file")
+parser.add_argument("--train_label", required=True, help="Path to training labels file")
+parser.add_argument("--dev_sent", required=True, help="Path to development sentences file")
+parser.add_argument("--dev_label", required=True, help="Path to development labels file")
+parser.add_argument("--test_sent", required=True, help="Path to test sentences file")
+parser.add_argument("--test_label", required=True, help="Path to test labels file")
+args = parser.parse_args()
 
 # Load data
-train_sentences, train_labels = load_data(train_sentence_file, train_label_file)
-dev_sentences, dev_labels = load_data(dev_sentence_file, dev_label_file)
-test_sentences, test_labels = load_data(test_sentence_file, test_label_file)
+train_sentences, train_labels = load_data(args.train_sent, args.train_label)
+dev_sentences, dev_labels = load_data(args.dev_sent, args.dev_label)
+test_sentences, test_labels = load_data(args.test_sent, args.test_label)
 
 # Initialize Label Encoder and TF-IDF Vectorizer
 label_encoder = LabelEncoder()
@@ -50,9 +79,7 @@ y_dev = label_encoder.transform(dev_labels)
 
 # AdaBoost Classifier with Decision Tree Base Estimator
 base_clf = DecisionTreeClassifier(max_depth=1)
-# adaboost_clf = AdaBoostClassifier(base_estimator=base_clf)
 adaboost_clf = AdaBoostClassifier(estimator=base_clf)
-
 
 # Parameter Grid for GridSearchCV
 param_grid = {

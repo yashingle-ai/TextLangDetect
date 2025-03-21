@@ -1,0 +1,28 @@
+              precision    recall  f1-score   support
+
+    asm_Beng       1.00      0.98      0.99      1000
+    ben_Beng       1.00      1.00      1.00      1000
+    brx_deva       0.87      0.99      0.93      1000
+    doi_Deva       0.93      0.89      0.91      1000
+    eng_Latn       1.00      1.00      1.00      1000
+    gom_deva       0.95      0.98      0.96      1000
+    guj_Gujr       1.00      1.00      1.00      1000
+    hin_Deva       0.99      0.98      0.99      1000
+    kan_Knda       1.00      1.00      1.00      1000
+    kas_Arab       0.99      0.99      0.99      1000
+    mai_Deva       0.87      0.91      0.89      1000
+    mal_Mlym       1.00      1.00      1.00      1000
+    mar_Deva       0.99      0.97      0.98      1000
+    mni_Mtei       0.63      0.91      0.75      1000
+    npi_Deva       0.96      0.90      0.93      1000
+    ory_Orya       1.00      1.00      1.00      1000
+    pan_Guru       1.00      1.00      1.00      1000
+    sat_olck       0.85      0.47      0.61      1000
+    snd_Deva       0.96      0.92      0.94      1000
+    tam_Taml       1.00      1.00      1.00      1000
+    tel_Telu       1.00      1.00      1.00      1000
+    urd_Arab       1.00      1.00      1.00      1001
+
+    accuracy                           0.95     22001
+   macro avg       0.95      0.95      0.95     22001
+weighted avg       0.95      0.95      0.95     22001

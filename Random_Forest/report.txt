@@ -1,54 +1,76 @@
-Best Parameters: {'n_estimators': 45, 'min_samples_split': 5, 'min_samples_leaf': 2, 'max_depth': None, 'criterion': 'gini'}
+Best Parameters: {'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_depth': None, 'criterion': 'gini'}
 
 Test Set Classification Report:
               precision    recall  f1-score   support
 
-         asm       0.98      0.68      0.80        62
-         ben       0.97      0.93      0.95        90
-         eng       1.00      0.89      0.94        90
-         guj       1.00      0.86      0.92       146
-         hin       1.00      0.94      0.97        94
-         mal       0.61      1.00      0.75       197
-         ori       1.00      0.84      0.91        73
-         pan       1.00      0.86      0.93       102
-         tam       1.00      0.83      0.91       108
-         tel       0.99      0.92      0.96       210
-         urd       1.00      0.85      0.92        73
+         asm       0.95      0.90      0.92      1000
+         ben       0.97      0.95      0.96      1000
+         brx       0.48      0.90      0.62      1000
+         doi       0.64      0.64      0.64      1000
+         eng       0.99      0.99      0.99      1000
+         gom       0.76      0.70      0.73      1000
+         guj       1.00      1.00      1.00      1000
+         hin       0.82      0.79      0.80      1000
+         kan       1.00      0.99      1.00      1000
+         kas       0.98      0.92      0.95      1000
+         mai       0.71      0.59      0.64      1000
+         mal       1.00      0.99      1.00      1000
+         mar       0.83      0.78      0.81      1000
+         mni       0.99      0.94      0.97      1000
+         npi       0.72      0.65      0.68      1000
+         ory       1.00      0.98      0.99      1000
+         pan       1.00      0.94      0.97      1000
+         sat       1.00      0.98      0.99      1000
+         snd       0.66      0.63      0.65      1000
+         tam       1.00      0.98      0.99      1000
+         tel       1.00      0.96      0.98      1000
+         urd       0.97      0.91      0.94      1000
 
-    accuracy                           0.89      1245
-   macro avg       0.96      0.87      0.90      1245
-weighted avg       0.93      0.89      0.90      1245
+    accuracy                           0.87     22000
+   macro avg       0.88      0.87      0.87     22000
+weighted avg       0.88      0.87      0.87     22000
 
 
 Dev Set Classification Report:
               precision    recall  f1-score   support
 
-         asm       0.93      0.64      0.76        61
-         ben       0.99      0.93      0.96        89
-         eng       0.99      0.93      0.96        90
-         guj       1.00      0.88      0.94       145
-         hin       1.00      0.90      0.95        93
-         mal       0.60      1.00      0.75       196
-         ori       1.00      0.90      0.95        72
-         pan       1.00      0.83      0.91       102
-         tam       1.00      0.84      0.91       107
-         tel       1.00      0.89      0.94       209
-         urd       1.00      0.86      0.93        72
+         asm       0.95      0.92      0.93      1000
+         ben       0.98      0.95      0.96      1000
+         brx       0.48      0.89      0.62      1000
+         doi       0.64      0.66      0.65      1000
+         eng       1.00      1.00      1.00      1000
+         gom       0.78      0.71      0.74      1000
+         guj       1.00      0.99      1.00      1000
+         hin       0.82      0.80      0.81      1000
+         kan       1.00      0.99      1.00      1000
+         kas       0.98      0.93      0.96      1000
+         mai       0.74      0.62      0.68      1000
+         mal       1.00      0.99      1.00      1000
+         mar       0.83      0.76      0.80      1000
+         mni       1.00      0.95      0.97      1000
+         npi       0.72      0.65      0.68      1000
+         ory       1.00      0.99      0.99      1000
+         pan       1.00      0.96      0.98      1000
+         sat       1.00      0.98      0.99      1000
+         snd       0.64      0.62      0.63      1000
+         tam       1.00      0.97      0.99      1000
+         tel       1.00      0.94      0.97      1000
+         urd       0.97      0.91      0.94      1000
 
-    accuracy                           0.89      1236
-   macro avg       0.96      0.87      0.90      1236
-weighted avg       0.93      0.89      0.90      1236
+    accuracy                           0.87     22000
+   macro avg       0.89      0.87      0.88     22000
+weighted avg       0.89      0.87      0.88     22000
 
 Evaluation Metrics (Macro, Micro, Weighted):
 
 Macro Averaging:
-Dev Precision: 0.9552708076237489 Dev Recall: 0.8745038330083617 Dev F1-Score: 0.9049951569602993
-Test Precision: 0.9580191992679105 Test Recall: 0.8724359668563565 Test F1-Score: 0.9049725890931519
+Dev Precision: 0.8873400677254323 Dev Recall: 0.872 Dev F1-Score: 0.8761723568549311
+Test Precision: 0.8844170072827411 Test Recall: 0.8692727272727272 Test F1-Score: 0.873228453005006
 
 Micro Averaging:
-Dev Precision: 0.8915857605177994 Dev Recall: 0.8915857605177994 Dev F1-Score: 0.8915857605177994
-Test Precision: 0.8923694779116466 Test Recall: 0.8923694779116466 Test F1-Score: 0.8923694779116466
+Dev Precision: 0.872 Dev Recall: 0.872 Dev F1-Score: 0.872
+Test Precision: 0.8692727272727273 Test Recall: 0.8692727272727273 Test F1-Score: 0.8692727272727273
 
 Weighted Averaging:
-Dev Precision: 0.9318184358632673 Dev Recall: 0.8915857605177994 Dev F1-Score: 0.8996580373060967
-Test Precision: 0.9323085476373272 Test Recall: 0.8923694779116466 Test F1-Score: 0.9003058360005383
+Dev Precision: 0.8873400677254323 Dev Recall: 0.872 Dev F1-Score: 0.8761723568549311
+Test Precision: 0.8844170072827409 Test Recall: 0.8692727272727273 Test F1-Score: 0.8732284530050057

@@ -1,0 +1,10 @@
+The data is scrapped from the various websites inclusive of Sanskrit Data. The major sites from where the data is obtained are the following.
+SanskritWorld.in
+Jawahar Lal Nehru University, Sanskrit Data
+SanskritDocuments.org
+Indian scriptures
+SanskritWorld
+NewsSanskrit.blogspot
+
+Link: https://www.kaggle.com/datasets/kartikbhatnagar18/sanskrit-text-corpus
+Remove sentences which are smaller than 7 tokens

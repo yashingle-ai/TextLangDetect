@@ -60,9 +60,11 @@ def main():
     # Define SVM & Grid Search parameters
     param_grid = {
         'C': [0, 0.001, 0.02, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+        # 'C': [1.],
         'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
     }
     tfidf_prefix = analyzer + '-' + '-'.join(map(str, ngram_range))
+    dump_object_into_pickle_file(tfidf_vectorizer, tfidf_prefix + '-vectorizer.pkl')
     for C in param_grid['C']:
         for kernel in param_grid['kernel']:
             model_prefix = '-'.join(['svm', 'C', str(C), 'kernel', kernel])

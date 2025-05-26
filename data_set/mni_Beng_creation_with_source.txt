@@ -1,0 +1,18 @@
+Manipuri in Bengali Script Crawl (mni_Beng)
+https://data.statmt.org/pmindia/v1/monolingual/ [PMINDIA Crawl]
+Use reference
+@ARTICLE{2020arXiv200109907H,
+       author = {{Haddow}, Barry and {Kirefu}, Faheem},
+        title = "{PMIndia -- A Collection of Parallel Corpora of Languages of India}",
+      journal = {arXiv e-prints},
+     keywords = {Computer Science - Computation and Language},
+         year = "2020",
+        month = "Jan",
+          eid = {arXiv:2001.09907},
+        pages = {arXiv:2001.09907},
+archivePrefix = {arXiv},
+       eprint = {2001.09907},
+}
+filtered sentences of length <= 5, for sanskrit filtered sentences of length <= 7
+mni_Beng.txt is created by adding train+dev+test in sequence same for sanskrit
+For Indic-LID benchmark, we will predict mni by removing the script info  

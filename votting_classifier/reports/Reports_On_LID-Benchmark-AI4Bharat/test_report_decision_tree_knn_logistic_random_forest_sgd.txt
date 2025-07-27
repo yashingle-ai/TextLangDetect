@@ -1,0 +1,30 @@
+decision_tree_knn_logistic_random_forest_sgd
+Classification Report -sir_new_data_set Test Set (soft voting)
+
+              precision    recall  f1-score   support
+
+         asm       1.00      1.00      1.00      1524
+         ben       1.00      1.00      1.00      5612
+         brx       1.00      1.00      1.00      1502
+         doi       1.00      1.00      1.00      1500
+         gom       1.00      1.00      1.00      1500
+         guj       1.00      1.00      1.00      5801
+         hin       0.99      1.00      1.00      5628
+         kan       1.00      1.00      1.00      5861
+         kas       1.00      0.99      1.00      3530
+         mai       1.00      0.98      0.99      2514
+         mal       1.00      1.00      1.00      5639
+         mar       1.00      1.00      1.00      5629
+         mni       1.00      1.00      1.00      2514
+         npi       1.00      1.00      1.00      2514
+         ory       1.00      1.00      1.00      1524
+         pan       1.00      1.00      1.00      5794
+         sat       1.00      1.00      1.00      2512
+    snd_Arab       1.00      1.00      1.00      5901
+         tam       1.00      1.00      1.00      5814
+         tel       1.00      1.00      1.00      5766
+         urd       1.00      1.00      1.00      6907
+
+    accuracy                           1.00     85486
+   macro avg       1.00      1.00      1.00     85486
+weighted avg       1.00      1.00      1.00     85486

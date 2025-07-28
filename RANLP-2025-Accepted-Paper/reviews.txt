@@ -1,0 +1,165 @@
+Dear Pruthwik Mishra,
+
+On behalf of the Programme Committee, we are pleased to inform you that your submission:
+
+#216: ILID: Native Script Language Identification for Indian Languages
+Authors: Yash Ingle and Pruthwik Mishra
+
+has been accepted for a poster presentation at RANLP 2025.
+
+This means that your paper belongs to one of the quality groups, which differ in terms of presentation format at the conference only. Please note that this does not affect the publication type you selected during submission (Long Paper, Short Paper, Poster, or Demo); all paper types have equal status in the proceedings.
+
+Based on the reviewers' scores, submissions have been ranked and assigned to one of the following categories:
+
+    The highest-scoring papers will receive long (regular) presentation slots.
+
+    The second-highest scoring submissions will be allocated shorter presentation slots, referred to as short presentations.
+
+    Papers with lower but still acceptable scores have been accepted as poster presentations.
+
+    Demos were evaluated separately and accepted accordingly.
+
+The reviewer comments are included below. We strongly encourage you to address the reviewers' feedback and ensure that the final version of your paper is carefully proofread.
+
+If you are using the Word template, please make sure to download the camera-ready template from the following link:
+🔗 https://ranlp.org/ranlp2025/index.php/submissions/
+
+We will not be able to include papers with headers or page numbers into the Proceedings.
+
+Please note that at least one author must register and pay the conference fee by the camera-ready deadline (31 July 2025) for your paper to be published. Registration is available here:
+🔗 https://ranlp.org/ranlp2025/index.php/fees-registration/
+
+To upload the final PDF version of your paper, please use the following link, which will take you directly to the submission form (after logging into your START account):
+
+https://softconf.com/ranlp25/papers/user/scmd.cgi?scmd=aLogin&passcode=216X-H9H6D4A6J8
+
+Alternatively, you can go to
+
+https://softconf.com/ranlp25/papers/
+
+and, on the left-hand side of the page, enter the passcode associated with your submission. Your passcode is as follows:
+
+216X-H9H6D4A6J8
+
+We congratulate you on the success and look forward to seeing you in Varna in September.
+
+Best regards,
+The RANLP Organisers, 2025
+RANLP 2025
+
+============================================================================ 
+RANLP 2025 Reviews for Submission #216
+============================================================================ 
+
+Title: ILID: Native Script Language Identification for Indian Languages
+Authors: Yash Ingle and Pruthwik Mishra
+
+
+============================================================================
+                            REVIEWER #1
+============================================================================
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+     Originality of the work (1-4) (1-4): 3
+          Technical accuracy (1-4) (1-4): 4
+Reference to previous/related research (1-5) (1-5): 2
+Presentation (clarity of aims and ideas and overall organisation) (1-3) (1-3): 2
+                     English (1-3) (1-3): 3
+                  Acceptance (1-6) (1-6): 4
+
+Detailed Comments
+---------------------------------------------------------------------------
+The paper addresses a highly relevant problem in NLP - native script language identification for Indian languages, which is both linguistically and socially impactful. 
+
+A key strength is the creation of the ILID dataset, which spans all 22 official Indian languages and English. Once it is made available it will be  a valuable resource for future research. The authors implement and compare a range of classification models, making the analysis realistic and useful.
+
+The main weakness of the paper is that the related work section is underdeveloped, and in particular work on code-mixed and Romanized Indic text, which are important in practice, is entirely omitted. Even if not recent, works such as
+Barman, Utsab, et al. "Code mixing: A challenge for language identification in the language of social media." Proceedings of the first workshop on computational approaches to code switching. 2014.
+and others are relevant for the topic. It would also be important to put the presented work in perspective, and show why new data is needed today.
+ 
+Still, with some changes in this direction the paper can be a good contribution to RANLP.
+---------------------------------------------------------------------------
+
+
+
+============================================================================
+                            REVIEWER #2
+============================================================================
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+     Originality of the work (1-4) (1-4): 1
+          Technical accuracy (1-4) (1-4): 2
+Reference to previous/related research (1-5) (1-5): 1
+Presentation (clarity of aims and ideas and overall organisation) (1-3) (1-3): 2
+                     English (1-3) (1-3): 2
+                  Acceptance (1-6) (1-6): 2
+
+Detailed Comments
+---------------------------------------------------------------------------
+The manuscript introduces ILID, a 230K sentence dataset for language identification across English and 22 Indian languages, combining web-scraped and existing corpus data. The authors evaluate traditional machine learning ensembles, FastText, and MuRIL models, reporting F1 scores between 0.96-0.99 across all configurations.
+
+This research applies existing methodological approaches without proposing novel techniques for language identification. While a corpus contribution is presented, the dataset documentation remains inadequate and relies substantially on existing corpus data through both direct sampling and web scraping procedures. The extraordinarily high performance claims require critical examination given the acknowledged complexity of Indian language identification, particularly considering script-sharing challenges that the authors themselves identify as problematic.
+
+major: 
+-	The complete lack of a related research section represents a fundamental scholarly oversight. This omission prevents adequate contextualization within the state-of-the-art and fails to establish how this work advances beyond existing methodologies. The repeated reliance on other datasets, where portions are directly copied from existing corpora and web-scraped samples derive "from an existing corpus" without proper citation, further compounds this documentation deficiency.
+-	The reliance on Wikipedia as a primary citation source for widely used languages in India suggests insufficient engagement with authoritative linguistic literature, when more scholarly sources should be readily available for such fundamental demographic information.
+-	As corpus development represents the primary contribution, substantially more detailed documentation is essential. Critical missing information includes: quantitative distribution between newly collected versus existing dataset samples; original dataset collection methodology and duplicate detection procedures; document type distribution across the corpus; specific criteria for "very short" sentence removal with appropriate linguistic justification; and representativeness validation procedures for the relatively small dev/test sets relative to training data.
+-	The systematic removal of sentences with low language identification probability (below 0.7 threshold) represents fundamentally problematic methodology. This approach eliminates precisely the most challenging cases from the dataset, thereby reducing ecological validity. While code-switching presents legitimate challenges, its prevalence in multilingual Indian contexts makes such systematic exclusion highly problematic for realistic evaluation.
+-	Numerous methodological choices lack adequate documentation and justification. Claims such as ensuring samples are "multilingual in length, script, domain, and style, reflecting the multilingual nature of India" remain meaningless without concrete explanation of implementation strategies and validation procedures.
+-	The reported scores appear extraordinarily high for a task characterized as inherently difficult. The inadequately explained comparison with state-of-the-art systems raises questions about whether such performance levels are representative of established research findings. The disconnect between claimed task difficulty and reported near-perfect performance requires systematic explanation and validation.
+
+minor:
+-	first sentence in abstract: missing "the"?
+-	the abstract talks more of the task itself than the methodology
+-	"perform poorly on Indian languages and they do not cover many of them." is a little too vague. I would like to see these claims backed up by numbers.
+-	"We create ILID dataset" missing "the"?
+-	Figure 1 is too small to be readable and there is no explanation for the purple highlighting.
+-	Which hyperparameters were used per classifier? Did you do any hyperparameter optimization?
+-	Multiple grammatical errors throughout, including missing articles and subject-verb disagreement ("Our ILID model perform better" should be "performs"). Comprehensive proofreading is required.
+---------------------------------------------------------------------------
+
+
+
+============================================================================
+                            REVIEWER #3
+============================================================================
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+     Originality of the work (1-4) (1-4): 2
+          Technical accuracy (1-4) (1-4): 2
+Reference to previous/related research (1-5) (1-5): 2
+Presentation (clarity of aims and ideas and overall organisation) (1-3) (1-3): 1
+                     English (1-3) (1-3): 2
+                  Acceptance (1-6) (1-6): 2
+
+Detailed Comments
+---------------------------------------------------------------------------
+Language identification is a critical preprocessing step in many NLP applications such as multilingual machine translation, information retrieval, question answering, and text summarization. The task becomes especially challenging in noisy, short, and code-mixed text â€” a common scenario in Indian contexts. Indian languages pose additional difficulties due to shared scripts and phonetic similarities despite linguistic diversity.
+
+Language Identification (LID) is a fundamental NLP task, especially for multilingual settings. This relevance is well established in this paper.
+
+The paper claims two key contributions:
+1. Release of a large dataset (230K sentences across 22 Indian languages + English).
+2. Development of strong baseline models using ML/DL methods.
+
+First claim is ok but second claim: what is the main contributions of authors except ML/ DL algorithm?
+
+Mentions the use of state-of-the-art machine learning and deep learning models, which reflects the use of modern techniques.  -> What is the contribution here?
+
+In this paper mentions "state-of-the-art" approaches, but does not specify which ML/DL models were used (e.g., CNNs, LSTMs, transformers). Including just a hint would improve clarity and informativeness.
+
+The term "robust baseline models" is vague. Robust in terms of what? Accuracy? Resilience to noise? Generalization? A more precise description would strengthen the claim.
+
+This paper mentions a large dataset, but gives no detail on how it was created â€” e.g., source of data, nature of the sentences, or how the labels were assigned. Even a one-line hint would help.
+
+"Comparable to state-of-the-art models" is a strong claim, but without any performance metric or baseline reference, it feels unsubstantiated in the abstract.
+---------------------------------------------------------------------------
+
+
+
